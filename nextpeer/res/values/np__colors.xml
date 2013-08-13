@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Theme Colors -->
+
+    <color name="np__white">#FFFFFF</color>
+    <color name="np__grey">#C0C0C0</color>
+    <color name="np__grey_dark">#434343</color>
+    <color name="np__grey_light">#909090</color>
+    <color name="np__orange">#FFA340</color>
+    <color name="np__orange_dark">#FF7402</color>
+    <color name="np__facebook_blue">#3B5998</color>
+    <color name="np__blue">#7CC9FB</color>
+    <color name="np__purple">#5C4DA0</color>
+    <color name="np__online_presence">#32B40D</color>
+    <color name="np__away_presence">#FF9900</color>
+    
+    <color name="np__content_background">#F2EEED</color>
+    <color name="np__content_line_separator_background_color">#D5D5D5</color> 
+    
+    <color name="np__notification_text">#FFFFFF</color>
+    
+    <color name="np__widget_text_content">#303030</color>
+    
+    <color name="np__replacement_thumbnail_background">#FF7402</color>
+    
+    <color name="np__dummy_action_bar_background">#48B5FB</color>
+    <color name="np__dummy_action_bar_text_color">#FFFFFF</color>
+    <color name="np__dummy_action_bar_drop_shadow_background_start">#77000000</color>
+    <color name="np__dummy_action_bar_drop_shadow_background_end">#00000000</color>
+    
+    <color name="np__tournament_loading_player_bar_background">#D5D5D5</color>
+    <color name="np__tournament_loading_player_bar_card_text_color">#303030</color>
+    <color name="np__tournament_loading_player_bar_label_text_color">#FFFFFF</color>
+    <color name="np__tournament_loading_loading_bar_text_color">#737373</color>
+    
+    <color name="np__tournament_results_replay_bar_background">#434343</color>
+    
+    <color name="np__tournament_results_peer_text_score_text_color">#3D3D3D</color>
+    <color name="np__tournament_results_peer_text_score_frame_color">#C7C7C7</color>
+
+</resources>

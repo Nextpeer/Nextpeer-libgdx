@@ -1,0 +1,260 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+         Please note that this might change a lot, 
+    	 seems it not implemented perfect and the only 
+    	 way to manage this is buy recursivly refactorying the file
+    -->
+
+    <style name="NP__" />
+
+    <style name="NP__.Fragment">
+        <item name="android:background">@null</item>
+    </style>
+
+    <!--
+    	========================================================
+    	Animations.
+    	======================================================== 
+    -->
+
+    <style name="NP__.Animation.Notification" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/np__notification_slide_in_up</item>
+        <item name="android:windowExitAnimation">@anim/np__notification_slide_in_down</item>
+    </style>
+    
+    <style name="NP__.Animation.Dialog" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/np__slide_in_up</item>
+        <item name="android:windowExitAnimation">@anim/np__slide_out_down</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Text Apperence.
+    	========================================================
+    -->
+    
+    <style name="NP__.TextAppearance.Large" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">22dp</item>
+    </style>
+    
+    <style name="NP__.TextAppearance.Medium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18dp</item>
+    </style>
+    
+    <style name="NP__.TextAppearance.Small" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14dp</item>
+    </style>
+    
+    <style name="NP__.TextAppearance.Tiny" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">9dp</item>
+    </style>
+
+    <!--
+    	========================================================
+    	Widgets.
+    	======================================================== 
+    -->
+
+    <style name="NP__.Widget" parent="NP__" />
+
+    <style name="NP__.Widget.DummyActionBar" parent="NP__.Widget">
+        <item name="android:height">@dimen/np__dummy_action_bar_default_height</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/np__dummy_action_bar_background</item>
+    </style>
+
+    <style name="NP__.Widget.DummyActionBar.Text" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/np__dummy_action_bar_text_color</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="NP__.Widget.DummyActionBar.Text.Title" parent="NP__.Widget.DummyActionBar.Text">
+        <item name="android:textSize">@dimen/np__dummy_action_bar_title_text_size</item>
+    </style>
+    
+    <style name="NP__.Widget.DummyActionBar.MoreOverflow">
+        <item name="android:src">@drawable/np__widget_moreoverflow</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+    <style name="NP__.Widget.Replacement">
+        <item name="android:background">@drawable/np__replacement_thumbnail_background</item>
+        <item name="android:minWidth">@dimen/np__replacement_thumbnail_size</item>
+        <item name="android:minHeight">@dimen/np__replacement_thumbnail_size</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:src">@null</item>
+    </style>
+
+    <style name="NP__.Widget.Text" parent="@android:style/Widget.TextView">
+        <item name="android:padding">0dip</item>
+    </style>
+
+    <style name="NP__.Widget.Text.Content" parent="NP__.Widget.Text">
+        <item name="android:textColor">@color/np__widget_text_content</item>
+    </style>
+    
+    <style name="NP__.Widget.Text.Content.Large" parent="NP__.Widget.Text.Content">
+        <item name="android:textAppearance">@style/NP__.TextAppearance.Large</item>
+    </style>
+
+    <style name="NP__.Widget.Text.Content.Medium" parent="NP__.Widget.Text.Content">
+        <item name="android:textAppearance">@style/NP__.TextAppearance.Medium</item>
+    </style>
+
+    <style name="NP__.Widget.Text.Content.Small" parent="NP__.Widget.Text.Content">
+        <item name="android:textAppearance">@style/NP__.TextAppearance.Small</item>
+    </style>
+
+    <style name="NP__.Widget.Text.Content.Title.Small" parent="NP__.Widget.Text.Content.Small">
+        <item name="android:textColor">@color/np__tournament_loading_loading_bar_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NP__.Widget.ListView" parent="@android:style/Widget.ListView">
+        <item name="android:background">@color/np__content_background</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
+    <style name="NP__.Widget.ListView.Context" parent="NP__.Widget.ListView">
+        <item name="android:divider">@color/np__content_line_separator_background_color</item>
+        <item name="android:dividerHeight">@dimen/np__content_line_separator_width</item>
+    </style>
+
+    <style name="NP__.Widget.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/np__widget_edittext</item>
+        <item name="android:padding">@dimen/np__widget_edittext_padding</item>
+        <item name="android:minHeight">@dimen/np__widget_edittext_height</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@color/np__grey_dark</item>
+        <item name="android:textColorHint">@color/np__grey</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+    
+    <style name="NP__.Widget.Button" parent="@android:style/Widget.Button">
+        <item name="android:minHeight">@dimen/np__widget_button_height</item>
+        <item name="android:padding">@dimen/np__widget_button_padding</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@color/np__white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">-40dp</item>
+    </style>
+    
+    
+    <!--
+    	========================================================
+    	Notifications.
+    	======================================================== 
+    -->
+    
+    <style name="NP__.Notification">
+        <item name="android:background">@drawable/np__notification_background</item>
+        <item name="android:padding">@dimen/np__notification_padding</item>
+    </style>
+
+    <style name="NP__.Notification.Text" parent="@android:style/Widget.TextView">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:padding">@dimen/np__notification_text_padding</item>
+        <item name="android:textColor">@color/np__notification_text</item>
+    </style>
+    
+    <style name="NP__.Notification.BadgeText" parent="@android:style/Widget.TextView">
+        <item name="android:background">@drawable/np__ic_notification_badge_empty</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textColor">@color/np__notification_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Dialogs.
+    	======================================================== 
+    -->
+
+    <style name="NP__.DialogWindowTitle">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textAppearance">@style/NP__.TextAppearance.DialogWindowTitle</item>
+        <item name="android:background">@color/np__grey_dark</item>
+        <item name="android:padding">@dimen/np__dialog_content_padding</item>
+        <item name="android:drawablePadding">@dimen/np__dialog_content_padding</item>
+        <item name="android:minHeight">@dimen/np__dialog_title_height</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="NP__.DialogWindowTitle.ChangeName" parent="NP__.DialogWindowTitle">
+        <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+    
+    <style name="NP__.DialogWindowTitle.ChangeAvatar" parent="NP__.DialogWindowTitle">
+        <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+    
+    <style name="NP__.TextAppearance.DialogWindowTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:textColor">@color/np__white</item>
+    </style>
+
+    <!--
+    	========================================================
+    	Quick Action Popup.
+    	======================================================== 
+    -->
+    
+	<style name="NP__.QuickActionPopup" />
+	
+	<style name="NP__.QuickActionPopup.PopDownMenu" />
+	
+	<style name="NP__.QuickActionPopup.PopDownMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_top</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_bottom</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopDownMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_topleft_to_bottomright</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_bottomright_to_topleft</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopDownMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_topright_to_bottomleft</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_bottomleft_to_topright</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopDownMenu.Reflect">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_pump_top</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_disappear</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopUpMenu" />
+	
+	<style name="NP__.QuickActionPopup.PopUpMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_bottom</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_top</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopUpMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_bottomleft_to_topright</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_topright_to_bottomleft</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopUpMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_grow_from_bottomright_to_topleft</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_shrink_from_topleft_to_bottomright</item>
+	</style>
+	
+	<style name="NP__.QuickActionPopup.PopUpMenu.Reflect">
+		<item name="@android:windowEnterAnimation">@anim/np__widget_popup_pump_bottom</item>
+		<item name="@android:windowExitAnimation">@anim/np__widget_popup_disappear</item>
+	</style>
+</resources>

@@ -1,0 +1,74 @@
+<resources>
+    
+    <dimen name="np__content_margin">16dp</dimen>
+    <dimen name="np__content_padding">16dp</dimen>
+    <dimen name="np__content_line_separator_width">1dp</dimen>
+    <dimen name="np__content_rectangle_radius_size">2dp</dimen>
+    
+    <dimen name="np__dialog_content_padding">16dp</dimen>
+    <dimen name="np__dialog_title_height">64dp</dimen>
+    <dimen name="np__dialog_title_progressbar_size">32dp</dimen>
+    
+    <dimen name="np__widget_text_content_horizontal_margin">4dp</dimen>
+    
+    <dimen name="np__widget_edittext_stroke_size">1dp</dimen>
+    <dimen name="np__widget_edittext_padding">12dp</dimen>
+    <dimen name="np__widget_edittext_height">48dp</dimen>
+    
+    <dimen name="np__widget_button_height">48dp</dimen>
+    <dimen name="np__widget_button_margin">2dp</dimen>
+    <dimen name="np__widget_button_padding">4dp</dimen>
+    
+    <dimen name="np__replacement_thumbnail_size">36dp</dimen>
+    <dimen name="np__replacement_thumbnail_margin">4dp</dimen>
+    <dimen name="np__replacement_thumbnail_margin_left">6dp</dimen>
+    
+    
+    <dimen name="np__dialog_changeavatar_grid_item_thumbnail_size">100dp</dimen>
+        
+    <dimen name="np__dummy_action_bar_default_height">48dip</dimen>
+    <dimen name="np__dummy_action_bar_icon_vertical_padding">8dp</dimen>
+    <dimen name="np__dummy_action_bar_title_text_size">18dp</dimen>
+    <dimen name="np__dummy_action_button_min_width">56dip</dimen>
+    <dimen name="np__dummy_action_bar_text_title_margin">16dp</dimen>
+    
+    <dimen name="np__activity_main_content_padding">16dp</dimen>
+
+    <dimen name="np__notification_width">232dp</dimen>
+    <dimen name="np__notification_height">64dp</dimen>
+    <dimen name="np__notification_minimum_width">298dp</dimen>
+    
+    <dimen name="np__notification_content_margin">4dp</dimen>
+    <dimen name="np__notification_content_margin_right">2dp</dimen>
+    <dimen name="np__notification_padding">4dp</dimen>
+    <dimen name="np__notification_text_padding">2dp</dimen>
+    <dimen name="np__notification_thumbnail_size">48dp</dimen>
+    <dimen name="np__notification_badge_size">18dp</dimen>
+    
+    <dimen name="np__tournament_bar_height">96dp</dimen>
+    
+    <dimen name="np__tournament_loading_player_bar_padding">6dp</dimen>
+    <dimen name="np__tournament_loading_player_bar_card_padding">8dp</dimen>
+    <dimen name="np__tournament_loading_player_bar_card_padding_right">2dp</dimen>
+    <dimen name="np__tournament_loading_loading_bar_vertical_padding">8dp</dimen>
+    <dimen name="np__tournament_loading_loading_bar_progressbar_size">32dp</dimen>
+    <dimen name="np__tournament_loading_friends_item_presence_size">12dp</dimen>
+    
+    <dimen name="np__tournament_loading_label_width">80dp</dimen>
+	<dimen name="np__tournament_results_replay_bar_button_replay_verticale_padding">8dp</dimen>
+	<dimen name="np__tournament_results_replay_bar_button_replay_horizontal_padding">16dp</dimen>
+	
+    <dimen name="np__tournament_loading_friends_play_now_bar_container_padding">16dp</dimen>
+    <dimen name="np__tournament_results_friends_play_again_bar_container_padding">8dp</dimen>
+    
+    <dimen name="np__tournament_results_peer_ribbon_line_width">8dp</dimen>
+    <dimen name="np__tournament_results_peer_ribbon_flag_size">48dp</dimen>
+    <dimen name="np__tournament_results_peer_ribbon_flag_horizontal_margin">8dp</dimen>
+    <dimen name="np__tournament_results_peer_text_playing_margin_right">4dp</dimen>
+    
+    <dimen name="np__tournament_results_peer_text_score_vertical_padding">4dp</dimen>
+    <dimen name="np__tournament_results_peer_text_score_horizontal_padding">8dp</dimen>
+    <dimen name="np__tournament_results_peer_text_name_right_margin">4dp</dimen>
+    
+    <dimen name="np__invite_fb_friends_list_item_margin">4dp</dimen>
+</resources>

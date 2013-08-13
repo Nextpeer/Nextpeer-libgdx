@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/NP__.Fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/np__tournament_bar_height"
+        android:background="@color/np__tournament_results_replay_bar_background"
+        android:padding="@dimen/np__content_padding"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/np__tournament_results_random_replay_bar_button_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/np__tournament_results_replay_bar_button_replay_selector"
+			android:paddingTop="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
+			android:paddingBottom="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
+			android:paddingLeft="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
+			android:paddingRight="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
+  			android:drawableLeft="@drawable/np__ic_replay_white"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"
+            android:textColor="@color/np__white"
+            android:text="@string/np__tournament_results_replay_bar_button_replay" />
+        
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/np__tournament_results_random_list_peers"
+        style="@style/NP__.Widget.ListView.Context"
+        android:divider="@drawable/np__list_divider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+    </ListView>
+    
+    <RelativeLayout
+        android:id="@+id/np__tournament_results_random_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:id="@+id/np__tournament_results_random_empty_view_progressbar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/np__tournament_results_random_indicator_title"
+            style="@style/NP__.Widget.Text.Content.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/np__tournament_results_random_empty_view_progressbar"
+            android:text="@string/np__loading_indicator_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+</LinearLayout>
