@@ -29,7 +29,7 @@ public class SuperJumperAndroid extends AndroidApplication {
 		SuperJumper superJumper = new SuperJumper();
 		initialize(superJumper, false);
 		
-		final String gameKey = ?; // TODO: Get your Game Key from https://developers.nextpeer.com
+		final String gameKey = "bfab9119ecfa6d758e16efe13bdd905a"; // TODO: Get your Game Key from https://developers.nextpeer.com
 		
 		// Nextpeer integration: Initialize Nextpeer with the AndroidContext, GameKey from (developers.nextpeer.com) and NextpeerListener handler
 		Nextpeer.initialize(this, gameKey, Tournaments.load(superJumper));
