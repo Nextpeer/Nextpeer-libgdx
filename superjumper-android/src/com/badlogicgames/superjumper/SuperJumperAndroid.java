@@ -19,20 +19,13 @@ package com.badlogicgames.superjumper;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.nextpeer.android.Nextpeer;
 
 public class SuperJumperAndroid extends AndroidApplication {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		SuperJumper superJumper = new SuperJumper();
+		SuperJumper superJumper = new SuperJumper(new AndroidTournaments(this));
 		initialize(superJumper, false);
-		
-		final String gameKey = "bfab9119ecfa6d758e16efe13bdd905a"; // TODO: Get your Game Key from https://developers.nextpeer.com
-		
-		// Nextpeer integration: Initialize Nextpeer with the AndroidContext, GameKey from (developers.nextpeer.com) and NextpeerListener handler
-		Nextpeer.initialize(this, gameKey, Tournaments.load(superJumper));
-		// Nextpeer integration 
 	}
 }

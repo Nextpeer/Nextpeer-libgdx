@@ -19,15 +19,37 @@ package com.badlogicgames.superjumper;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.nextpeer.libgdx.Tournaments;
+import com.nextpeer.libgdx.TournamentsCallback;
 
-public class SuperJumper extends Game {
+public class SuperJumper extends Game implements TournamentsCallback {
 	boolean firstTimeCreate = true;
 	FPSLogger fps;
-
+	public Tournaments tournaments = null;
+	
+	public SuperJumper() {
+		this(null);
+	}
+	
+	public SuperJumper(Tournaments tournaments) {
+		
+		// If we have a supported tournaments object, set the game as callback
+		if (tournaments != null && tournaments.isSupported()) {
+			this.tournaments = tournaments;
+			this.tournaments.setTournamentsCallback(this);
+		}
+	}
+	
 	@Override
 	public void create () {
 		Settings.load();
 		Assets.load();
+
+		// Load the TournamentsCore if we have a valid implementation of it
+		if (this.tournaments != null) {
+			TournamentsCore.load(this.tournaments);
+		}
+		
 		setScreen(new MainMenuScreen(this));
 		fps = new FPSLogger();
 	}
@@ -47,4 +69,28 @@ public class SuperJumper extends Game {
 
 		getScreen().dispose();
 	}
+	
+	/**
+	 * TournamentsCallback implementation
+	 * Responsible to answer on certain tournament events such as start tournament & end tournament.
+	 */
+
+	/**
+	 * This method will be called when a tournament is about to start
+	 * @param tournamentRandomSeed Used when the game 'generate' the level with its random function -> so all players will have the same world
+	 * @note Should switch to the game scene
+	 */
+    public void onTournamentStart(long tournamentRandomSeed) {
+        // Start the game scene
+    	setScreen(new GameScreen(this));
+    }
+
+    /**
+     * This method is invoked whenever the current tournament has finished 
+	 * @note Should switch to the main menu scene
+     */
+    public void onTournamentEnd() {
+        // End the game scene, switch to main menu
+    	setScreen(new MainMenuScreen(this));
+    }
 }

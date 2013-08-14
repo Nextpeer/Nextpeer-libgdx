@@ -54,15 +54,25 @@ public class World {
 	public int state;
 
 	public World (WorldListener listener) {
+		
 		this.bob = new Bob(5, 1);
 		this.platforms = new ArrayList<Platform>();
 		this.springs = new ArrayList<Spring>();
 		this.squirrels = new ArrayList<Squirrel>();
 		this.coins = new ArrayList<Coin>();
 		this.listener = listener;
-		
+
 		// Nextpeer integration: Make sure the random function is seeded with the tournament random seed so all players will share the same level
-		rand = new Random(Tournaments.instance().tournamentRandomSeed());
+		long randomSeed = 0;
+		TournamentsCore core = TournamentsCore.instance();
+		if (core != null) randomSeed = core.lastKnownTournamentRandomSeed;
+		
+		if (randomSeed == 0) {
+			rand = new Random();
+		}
+		else {
+			rand = new Random(randomSeed);	
+		}
 		// Nextpeer integration
 		
 		generateLevel();

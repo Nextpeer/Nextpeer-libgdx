@@ -28,6 +28,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogicgames.superjumper.World.WorldListener;
+import com.nextpeer.libgdx.Tournaments;
 
 public class GameScreen implements Screen {
 	static final int GAME_READY = 0;
@@ -142,8 +143,12 @@ public class GameScreen implements Screen {
 		if (world.score != lastScore) {
 			lastScore = world.score;
 			scoreString = "SCORE: " + lastScore;
+			
 			// Nextpeer integration: Report on the new score
-			Tournaments.instance().reportScoreForCurrentTournament(lastScore);
+			Tournaments tournaments = TournamentsCore.tournaments();
+			if (tournaments != null) {
+				tournaments.reportScoreForCurrentTournament(lastScore);
+			}
 			// Nextpeer integration 
 		}
 		if (world.state == World.WORLD_STATE_NEXT_LEVEL) {
@@ -173,8 +178,12 @@ public class GameScreen implements Screen {
 
 			if (OverlapTester.pointInRectangle(quitBounds, touchPoint.x, touchPoint.y)) {
 				Assets.playSound(Assets.clickSound);
+
 				// Nextpeer integration: The user wish to leave the current game, report Nextpeer on its forfeit 
-				Tournaments.instance().reportForfeitForCurrentTournament();
+				Tournaments tournaments = TournamentsCore.tournaments();
+				if (tournaments != null) {
+					tournaments.reportForfeitForCurrentTournament();
+				}
 				// Nextpeer integration 
 				
 				game.setScreen(new MainMenuScreen(game));
@@ -191,7 +200,10 @@ public class GameScreen implements Screen {
 			state = GAME_READY;
 
 			// Nextpeer integration: Level ended - Report on the last score to Nextpeer 
-			Tournaments.instance().reportControlledTournamentOverWithScore(lastScore);
+			Tournaments tournaments = TournamentsCore.tournaments();
+			if (tournaments != null) {
+				tournaments.reportControlledTournamentOverWithScore(lastScore);
+			}
 			// Nextpeer integration 
 		}
 	}
@@ -199,7 +211,10 @@ public class GameScreen implements Screen {
 	private void updateGameOver () {
 		if (Gdx.input.justTouched()) {
 			// Nextpeer integration: Game over - Report on the last score to Nextpeer 
-			Tournaments.instance().reportControlledTournamentOverWithScore(lastScore);
+			Tournaments tournaments = TournamentsCore.tournaments();
+			if (tournaments != null) {
+				tournaments.reportControlledTournamentOverWithScore(lastScore);
+			}
 			// Nextpeer integration 
 			game.setScreen(new MainMenuScreen(game));
 		}
