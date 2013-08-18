@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/NP__.Notification"
+    android:layout_width="wrap_content"
+    android:minWidth="@dimen/np__notification_minimum_width"
+    android:layout_height="@dimen/np__notification_height" >
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__notification_thumbnail"
+        android:layout_width="@dimen/np__notification_thumbnail_size"
+        android:layout_height="@dimen/np__notification_thumbnail_size"
+        android:layout_marginTop="@dimen/np__notification_content_margin"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_marginLeft="@dimen/np__notification_content_margin"
+        android:layout_marginRight="@dimen/np__notification_content_margin_right"
+        android:src="@drawable/np__ic_nextpeer" />
+
+    <TextView
+        android:id="@+id/np__notification_badge"
+        style="@style/NP__.Notification.BadgeText"
+        android:layout_width="@dimen/np__notification_badge_size"
+        android:layout_height="@dimen/np__notification_badge_size"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_gravity="bottom" />
+
+    <TextView
+        android:id="@+id/np__notification_text"
+        style="@style/NP__.Notification.Text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/np__notification_content_margin" />
+
+</LinearLayout>

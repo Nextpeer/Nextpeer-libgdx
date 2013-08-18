@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- General -->
+    <string name="np__application_name">Nextpeer</string>
+
+    <!-- Menu / Settings -->
+    <string name="np__menu_action_settings">Settings</string>
+    
+    <!-- Dialog - Alert -->
+	<string name="np__dialog_alert_confirm">OK</string>
+	<string name="np__dialog_alert_error_connectivity_title">No internet connection</string>
+	<string name="np__dialog_alert_error_connectivity_description">Please check your network connections and try again later.</string>
+	
+	<!-- Dialog - Change name -->
+	<string name="np__dialog_changename_title">Change your name</string>
+	<string name="np__dialog_changename_button_positive">Save</string>
+	<string name="np__dialog_changename_button_negative">Cancel</string>
+	<string name="np__dialog_changename_error_empty_name">Name is empty.</string>
+	<string name="np__dialog_changename_error_connection">An error has occurred, please try again later.</string>
+	
+	<!-- Dialog - Change avatar -->
+	<string name="np__dialog_changeavatar_title">Change your avatar</string>
+	<string name="np__dialog_changeavatar_button_positive">Save</string>
+	<string name="np__dialog_changeavatar_button_negative">Cancel</string>
+	<string name="np__dialog_changeavatar_error_empty_name">Name is empty.</string>
+	<string name="np__dialog_changeavatar_error_connection">An error has occurred, please try again later.</string>
+	
+	<string name="np__loading_indicator_title">Loading...</string>
+	
+	<!-- Dialog - Play with FB friends -->
+	<string name="np__dialog__try_play_with_fb_friends_title">Play with your friends</string>
+	<string name="np__dialog__try_play_with_fb_friends_description">Would you like to challenge your Facebook friends?</string>
+	<string name="np__dialog__try_play_with_fb_friends_positive">YES</string>
+	<string name="np__dialog__try_play_with_fb_friends_negative">Later</string>
+	
+	<!-- User Profile fetching. -->
+	
+	<string name="np__user_profile_fetching_title">Welcome to Nextpeer</string>
+	
+	<!-- Tournament - Selection -->
+	<string name="np__tournament_selection_title">Select a Tournament</string>
+		
+	<!-- Tournament - Loading -->
+	<string name="np__tournament_loading_title">Loading Tournament</string>
+	<string name="np__tournament_loading_loading_bar_title_connecting">Connecting...</string>
+	<string name="np__tournament_loading_loading_bar_title_zero">Looking for players</string>
+	<string name="np__tournament_loading_loading_bar_title_one">Found one player</string>
+	<string name="np__tournament_loading_loading_bar_title_many">Found %d players</string>
+	<string name="np__tournament_loading_label">THIS IS YOU</string>
+	
+	<!-- Tournament - Results -->
+	<string name="np__tournament_results_title">Tournament Results</string>
+	<string name="np__tournament_results_replay_bar_button_replay">Play Again!</string>
+	<string name="np__tournament_results_overflow_changename_title">Change name</string>
+	<string name="np__tournament_results_overflow_changeavatar_title">Change avatar</string>
+	
+	<string name="np__tournament_results_peer_label_playing">Playing</string>
+	
+	<!-- Tournament - Disconnect -->
+	<string name="np__tournament_disconnect_title">Lost connection</string>
+	<string name="np__tournament_disconnect_dialog_text">Please check your network connections and try again later.</string>
+		
+</resources>

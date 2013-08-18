@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/NP__.Notification"
+    android:layout_width="wrap_content"
+    android:minWidth="@dimen/np__notification_minimum_width"
+    android:layout_height="@dimen/np__notification_height"
+    android:orientation="horizontal" >
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__notification_thumbnail_first_place"
+        android:layout_width="@dimen/np__notification_thumbnail_size"
+        android:layout_height="@dimen/np__notification_thumbnail_size"
+        android:layout_marginTop="@dimen/np__notification_content_margin"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_marginLeft="@dimen/np__notification_content_margin"
+        android:layout_marginRight="@dimen/np__notification_content_margin_right"
+        android:src="@drawable/np__ic_nextpeer" />
+    
+    <TextView
+        android:id="@+id/np__notification_badge_first_place"
+        style="@style/NP__.Notification.BadgeText"
+        android:layout_width="@dimen/np__notification_badge_size"
+        android:layout_height="@dimen/np__notification_badge_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:text="1" />
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__notification_thumbnail_second_place"
+        android:layout_width="@dimen/np__notification_thumbnail_size"
+        android:layout_height="@dimen/np__notification_thumbnail_size"
+        android:layout_marginTop="@dimen/np__notification_content_margin"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_marginLeft="@dimen/np__notification_content_margin"
+        android:layout_marginRight="@dimen/np__notification_content_margin_right"
+        android:src="@drawable/np__ic_nextpeer" />
+    
+    <TextView
+        android:id="@+id/np__notification_badge_second_place"
+        style="@style/NP__.Notification.BadgeText"
+        android:layout_width="@dimen/np__notification_badge_size"
+        android:layout_height="@dimen/np__notification_badge_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:text="2" />
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__notification_thumbnail_third_place"
+        android:layout_width="@dimen/np__notification_thumbnail_size"
+        android:layout_height="@dimen/np__notification_thumbnail_size"
+        android:layout_marginTop="@dimen/np__notification_content_margin"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_marginLeft="@dimen/np__notification_content_margin"
+        android:layout_marginRight="@dimen/np__notification_content_margin_right"
+        android:src="@drawable/np__ic_nextpeer" />
+    
+    <TextView
+        android:id="@+id/np__notification_badge_third_place"
+        style="@style/NP__.Notification.BadgeText"
+        android:layout_width="@dimen/np__notification_badge_size"
+        android:layout_height="@dimen/np__notification_badge_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:text="3" />
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__notification_thumbnail_fourth_place"
+        android:layout_width="@dimen/np__notification_thumbnail_size"
+        android:layout_height="@dimen/np__notification_thumbnail_size"
+        android:layout_marginTop="@dimen/np__notification_content_margin"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:layout_marginLeft="@dimen/np__notification_content_margin"
+        android:layout_marginRight="@dimen/np__notification_content_margin_right"
+        android:src="@drawable/np__ic_nextpeer" />
+    
+    <TextView
+        android:id="@+id/np__notification_badge_fourth_place"
+        style="@style/NP__.Notification.BadgeText"
+        android:layout_width="@dimen/np__notification_badge_size"
+        android:layout_height="@dimen/np__notification_badge_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/np__notification_content_margin"
+        android:text="4" />
+
+</LinearLayout>
