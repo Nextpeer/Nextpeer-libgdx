@@ -15,7 +15,7 @@ import android.content.Context;
 public final class AndroidTournaments extends Tournaments {
 	public AndroidTournaments(Context context) {
 		
-		final String gameKey = "bfab9119ecfa6d758e16efe13bdd905a"; // TODO: Get your Game Key from https://developers.nextpeer.com
+		final String gameKey = ?; // TODO: Get your Game Key from https://developers.nextpeer.com
 		
 		Nextpeer.initialize(context, gameKey, _listener);
 	}
