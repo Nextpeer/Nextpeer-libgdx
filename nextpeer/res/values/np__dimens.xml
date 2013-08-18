@@ -52,14 +52,12 @@
     <dimen name="np__tournament_loading_player_bar_card_padding_right">2dp</dimen>
     <dimen name="np__tournament_loading_loading_bar_vertical_padding">8dp</dimen>
     <dimen name="np__tournament_loading_loading_bar_progressbar_size">32dp</dimen>
-    <dimen name="np__tournament_loading_friends_item_presence_size">12dp</dimen>
+    <dimen name="np__tournament_loading_friends_item_presence_size">6dp</dimen>
     
     <dimen name="np__tournament_loading_label_width">80dp</dimen>
-	<dimen name="np__tournament_results_replay_bar_button_replay_verticale_padding">8dp</dimen>
-	<dimen name="np__tournament_results_replay_bar_button_replay_horizontal_padding">16dp</dimen>
-	
-    <dimen name="np__tournament_loading_friends_play_now_bar_container_padding">16dp</dimen>
-    <dimen name="np__tournament_results_friends_play_again_bar_container_padding">8dp</dimen>
+    
+    <dimen name="np__tournament_results_replay_bar_button_replay_verticale_padding">8dp</dimen>
+    <dimen name="np__tournament_results_replay_bar_button_replay_horizontal_padding">16dp</dimen>
     
     <dimen name="np__tournament_results_peer_ribbon_line_width">8dp</dimen>
     <dimen name="np__tournament_results_peer_ribbon_flag_size">48dp</dimen>

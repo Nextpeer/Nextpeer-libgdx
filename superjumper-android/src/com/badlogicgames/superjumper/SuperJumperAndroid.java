@@ -25,7 +25,8 @@ public class SuperJumperAndroid extends AndroidApplication {
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		SuperJumper superJumper = new SuperJumper(new AndroidTournaments(this));
+		AndroidTournaments tournaments = new AndroidTournaments(this);
+		SuperJumper superJumper = new SuperJumper(tournaments);
 		initialize(superJumper, false);
 	}
 }

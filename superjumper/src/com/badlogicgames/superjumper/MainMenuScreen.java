@@ -65,6 +65,10 @@ public class MainMenuScreen implements Screen {
 				if (tournaments != null) {
 					tournaments.launch();
 				}
+				// Else, we don't have tournament mode, run the game normally
+				else {
+					game.setScreen(new GameScreen(game));
+				}
 				// Nextpeer integration 
 				return;
 			}
