@@ -25,7 +25,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
-import com.nextpeer.libgdx.Tournaments;
 
 public class MainMenuScreen implements Screen {
 	Game game;
@@ -61,10 +60,9 @@ public class MainMenuScreen implements Screen {
 				// Nextpeer integration: Replace the call to start the game scene with Nextpeer launch 
 				// game.setScreen(new GameScreen(game));
 			    // Launch Nextpeer the dashboard when someone taps on Play
-				Tournaments tournaments = TournamentsCore.tournaments();
-				if (tournaments != null) {
-					tournaments.launch();
-				}
+			    if (NextpeerPlugin.isAvailable()) {
+			    	NextpeerPlugin.tournaments().launch();
+			    }
 				// Else, we don't have tournament mode, run the game normally
 				else {
 					game.setScreen(new GameScreen(game));

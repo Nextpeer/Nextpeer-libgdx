@@ -64,9 +64,11 @@ public class World {
 
 		// Nextpeer integration: Make sure the random function is seeded with the tournament random seed so all players will share the same level
 		long randomSeed = 0;
-		TournamentsCore core = TournamentsCore.instance();
-		if (core != null) randomSeed = core.lastKnownTournamentRandomSeed;
 		
+		if (NextpeerPlugin.isAvailable()) {
+		    randomSeed = NextpeerPlugin.instance().lastKnownTournamentRandomSeed;
+		}
+
 		if (randomSeed == 0) {
 			rand = new Random();
 		}

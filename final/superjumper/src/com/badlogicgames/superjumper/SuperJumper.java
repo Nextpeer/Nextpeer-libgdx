@@ -47,7 +47,7 @@ public class SuperJumper extends Game implements TournamentsCallback {
 
 		// Load the TournamentsCore if we have a valid implementation of it
 		if (this.tournaments != null) {
-			TournamentsCore.load(this.tournaments);
+			NextpeerPlugin.load(this.tournaments);
 		}
 		
 		setScreen(new MainMenuScreen(this));
@@ -82,7 +82,7 @@ public class SuperJumper extends Game implements TournamentsCallback {
 	 */
     public void onTournamentStart(long tournamentRandomSeed) {
         // Start the game scene
-        TournamentsCore.instance().lastKnownTournamentRandomSeed = tournamentRandomSeed;
+        NextpeerPlugin.instance().lastKnownTournamentRandomSeed = tournamentRandomSeed;
     	setScreen(new GameScreen(this));
     }
 
@@ -92,7 +92,7 @@ public class SuperJumper extends Game implements TournamentsCallback {
      */
     public void onTournamentEnd() {
         // End the game scene, switch to main menu
-        TournamentsCore.instance().lastKnownTournamentRandomSeed = 0;
+        NextpeerPlugin.instance().lastKnownTournamentRandomSeed = 0;
     	setScreen(new MainMenuScreen(this));
     }
 }
