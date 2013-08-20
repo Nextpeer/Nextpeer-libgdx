@@ -1,4 +1,4 @@
-#LibGDX
+#LibGDX - Nextpeer Integration guide
 
 <a id="Introductions"></a>
 ##Introduction
