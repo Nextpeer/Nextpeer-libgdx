@@ -1,8 +1,8 @@
-#LibGDX - Nextpeer Integration guide
+#libGDX - Nextpeer Integration guide
 
 <a id="Introductions"></a>
 ##Introduction
-SuperJumper is a platform jumping game (powered by [LibGDX][libgdx]) in which players earn points by collecting coins as they guide their jumper up the game map by bouncing on platforms and springs while dodging the evil squirrels. 
+SuperJumper is a platform jumping game (powered by [libGDX][libgdx]) in which players earn points by collecting coins as they guide their jumper up the game map by bouncing on platforms and springs while dodging the evil squirrels. 
 
 The [Nextpeer][np] platform lets you easily add multiplayer tournaments to your single player game. This in turn enables users to play with each other and to remain better engaged with the game. The platform supports either time based tournaments or game controlled (in which the game decides when to end the tournament) tournaments. 
 Nextpeer has many advanced features which allow you to turn your game into a multiplayer phenomena. This tutorial will cover the basic integration that needs to be done. We strongly advise serious developers to dig deeper in our [documentation][docs] section.
@@ -13,11 +13,11 @@ Nextpeer has many advanced features which allow you to turn your game into a mul
 [Install Android SDK][AndroidSDK] <br>
 [Install Android ADT][AndroidADT] <br>
 [Download the latest Nextpeer Andoid SDK] [LatestSDK] <br>
-[Download the Nextpeer-LibGDX example][libgdxexample] <br>
+[Download the Nextpeer-libGDX example][libgdxexample] <br>
 
 <a id="ImportProjects"></a>
 ## Import Projects
-The Nextpeer-LibGDX example has 2 folders:
+The Nextpeer-libGDX example has 2 folders:
 
 + `starter` - which contains the start project for this tutorial. Use this project when going through this tutorial.
 + `final`- which contains the complete source code for this tutorial. This version is how your code will look like once you’ve completed the tutorial.
