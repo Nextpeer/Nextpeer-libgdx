@@ -22,24 +22,22 @@ The Nextpeer-libGDX example has 2 folders:
 + `starter` - which contains the start project for this tutorial. Use this project when going through this tutorial.
 + `final`- which contains the complete source code for this tutorial. This version is how your code will look like once you’ve completed the tutorial.
 
-The `starter` folder has 5 Eclipse projects in it: <br>
-**superjumper** - The source code for the game core (libgdx)<br>
+The `starter` folder has 3 Java projects in it: <br>
+**superjumper** - The source code for the game core (libGDX)<br>
 **superjumper-android** - The Android project for the game<br>
 **NextpeerConnect** - NextpeerAndroid SDK (we suggest updating this folder with the latest Android SDK from our developer’s dashboard).<br>
-**libgdx-nextpeer-bridge** - An interface between the core java game project to the Android project (as instructed by libgdx’s wiki under [ApplicationPlatformSpecific)][wiki].<br>
-**glue** - This Android library is been used as a workaround for issues involved when linking a pure java project (libgdx-nextpeer-bridge) with an Android project.<br>
 
 ###Import those projects into Eclipse
-Import superjumper, superjumper-android, NextpeerConnect, libgdx-nextpeer-bridge and glue into Eclipse. When importing, be sure to use the standard general import option under “General” labeled “Existing Projects into Workspace”.<br>
+Import `superjumper`, `superjumper-android` and `NextpeerConnect` into Eclipse. When importing, be sure to use the standard general import option under “General” labeled “Existing Projects into Workspace”.<br>
 When building the projects the “superjumper-android” should be the only project which doesn’t compile. If anything gets goofy during this import process, try closing and re-opening projects, doing clean builds, or re-importing.
 
 <a id="SetupTheManifest"></a>
 ##Setup The Manifest For superjumper-android
 ###Add Required Permissions
-Next, open the AndroidManifest.xml file in the superjumper-android project and switch to the Permissions tab. Click Add..., then Uses Permission, then OK, You'll see Uses Permission in the Permissions list, which you should click to highlight. Pick `android.permission.INTERNET` from the drop-down menu to the right.
+Next, open the AndroidManifest.xml file in the `superjumper-android` project and switch to the Permissions tab. Click Add..., then Uses Permission, then OK, You'll see Uses Permission in the Permissions list, which you should click to highlight. Pick `android.permission.INTERNET` from the drop-down menu to the right.
 If you’re using raw XML, copy and paste the following line into the manifest file:
 
-	<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 ###Add The NextpeerActivity
 Under Application Nodes, click Add…, then Activity, then OK. Once created, select the Activity in the list. It should be named Activity. On the bottom right panel in the ‘Name*’ field enter `com.nextpeer.android.NextpeerActivity`. Save the AndroidManifest.xml file.
@@ -68,10 +66,11 @@ Copy the “Game key” value to the clipboard, you will need this to initialize
 
 
 ###Integrating Nextpeer In Your Game
-The bridge project (libgdx-nextpeer-bridge) defines an abstract class named `Tournaments.java`. This abstract class defines OS specific code which is required by the Nextpeer platform. You can see the Android implementation for this abstract class under “superjumper-android” with “AndroidTournaments.java”.
+Inside `superjumper` project, under the `com.nextpeer.libgdx` package you can find the  interface between the core java game project to the Android project (as instructed by libgdx’s wiki under [ApplicationPlatformSpecific)][wiki].<br>
+The `com.nextpeer.libgdx` package has an abstract class named `Tournaments.java`. This abstract class defines OS specific code which is required by the Nextpeer platform. You can see the Android implementation for this abstract class under `superjumper-android` with `AndroidTournaments.java`.
 
 
-Paste they game key you received from the Nextpeer developer dashboard in the constructor in `AndroidTournaments.java`. Build the project. At this point superjumper-android should compile properly.
+Paste they game key you received from the Nextpeer developer dashboard in the constructor of `AndroidTournaments.java`. Build the project. At this point the `superjumper-android` project should compile properly.
 
 <a id="Expanding"></a>
 ##Expanding The Game-core To Support The Tournaments Class
@@ -108,12 +107,12 @@ The next thing we’ll do is have the SuperJumper class comform to the `Tourname
 <a id="TheNextpeerPluginClass"></a>
 ##The NextpeerPlugin Class
 Since different parts of the game will require access to the tournaments class, we should wrap it with a singleton (in the same manner as Settings and Assets are wrapped).
-Take a look on the `NextpeerPlugin.java` class in “SuperJumper” project. It holds the instance of the Tournaments object so it can be safely accessed from the different game screens at different points in time.
+Take a look on the `NextpeerPlugin.java` class in `superjumper` project. It holds the instance of the Tournaments object so it can be safely accessed from the different game screens at different points in time.
 
 <a id="StartingandFinishingTournaments"></a>
 ##Starting And Finishing Tournaments
 
-Let’s go back to the SuperJumper.java file and look at the method that is in charge of starting tournaments - `onTournamentStart(long tournamentRandomSeed)`.
+Let’s go back to the `SuperJumper.java` file and look at the method that is in charge of starting tournaments - `onTournamentStart(long tournamentRandomSeed)`.
 This method will be triggered by Nextpeer when it’s time to start the tournament and show the game sequence. Nextpeer will hide its user interface in order for the game to show up.
 The `tournamentRandomSeed` paramater can be used to seed your random generator. All players are handed identical random seeds so this guarantees players all compete using the same exact level, enemies, powerups etc. 
 Since the World class is responsible for generating the level, we will use this value later on when we’ll create the Random object. For now, let’s store the value in the `NextpeerPlugin` container and then switch to the GameScreen screen:
@@ -259,7 +258,7 @@ You're all done! You should be able to compile and run your new Super Jumper gam
 You can continue building the project by adding advanced player to player communication, for example show the other players on the screen, letting players interact with the other players whilst in-game (with powerups) or even make the game time-based!
 Checkout Nextpeer’s version for the game on [Playstore][playStore].
 
-Thanks for following the Super Jumper - LibGDX Example! If you have any questions or comments, we'd love to hear your thoughts. Please send all feedback through the [support@nextpeer.com][support].
+Thanks for following the Super Jumper - libGDX Example! If you have any questions or comments, we'd love to hear your thoughts. Please send all feedback through the [support@nextpeer.com][support].
 
 [libgdx]: http://libgdx.badlogicgames.com/
 [np]: http://www.nextpeer.com
