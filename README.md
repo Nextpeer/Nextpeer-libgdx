@@ -250,7 +250,35 @@ In order to keep the game fair for all players we need to make sure the players 
 		this.state = WORLD_STATE_RUNNING;
 	}
 
+<a id="AndroidSpecific"></a>
+##Android Specific Integration
+Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class. We will need to pass the `AndroidTournaments` instance to the `SuperJumper` game constructor. We will also need to handle the use case of pressing on the back button while in tournament mode (so the other active players will know that the player has forfeit the game). Expend the `SuperJumperAndroid.java` class with the following code:
 
+	    private AndroidTournaments mTournaments = null;
+	
+        /** Called when the activity is first created. */
+	    @Override
+	    public void onCreate (Bundle savedInstanceState) {
+	    	super.onCreate(savedInstanceState);
+            
+            // Initialize the tournament instance with the Context
+	    	mTournaments = new AndroidTournaments(this);
+            
+            // Pass the Android tournaments instance to the game
+	    	SuperJumper superJumper = new SuperJumper(mTournaments);
+    		initialize(superJumper, false);
+	    }
+
+        /** The user pressed on the back button */
+        @Override
+        public void onBackPressed() {
+    	    // If the game is in tournament mode -> forfeit the tournament.
+    	    if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
+    		    mTournaments.reportForfeitForCurrentTournament();
+    	    }
+		    super.onBackPressed();
+        }
+    
 <a id="NextSteps"></a>
 ##Next Steps
 Congratulations!
