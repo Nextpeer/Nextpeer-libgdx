@@ -1,82 +1,82 @@
-#libGDX - Nextpeer Integration guide
+# libGDX - Nextpeer Integration guide
 
 <a id="Introductions"></a>
-##Introduction
-SuperJumper is a platform jumping game (powered by [libGDX][libgdx]) in which players earn points by collecting coins as they guide their jumper up the game map by bouncing on platforms and springs while dodging the evil squirrels. 
+## Introduction
+SuperJumper is a platform-jumping game powered by [libGDX][libgdx] in which players earn points by collecting coins as they guide their character up the game map by bouncing on platforms and springs while dodging the evil squirrels. 
 
-The [Nextpeer][np] platform lets you easily add multiplayer tournaments to your single player game. This in turn enables users to play with each other and to remain better engaged with the game. The platform supports either time based tournaments or game controlled (in which the game decides when to end the tournament) tournaments. 
-Nextpeer has many advanced features which allow you to turn your game into a multiplayer phenomena. This tutorial will cover the basic integration that needs to be done. We strongly advise serious developers to dig deeper in our [documentation][docs] section.
+The [Nextpeer][np] platform lets you easily add multiplayer tournaments to your single player game, so users can play with each other become more engaged with the game. The platform supports both time-based and game-controlled (in which the game decides when to end the tournament) tournaments. Nextpeer has many advanced features which allow you to turn your game into a multiplayer phenomenon. This tutorial will cover the basic integration between a libGDX game and Nextpeer. For more advanced topics, please see our [documentation][docs] section.
+
 <a id="Prerequisites"></a>
-##Prerequisites
+## Prerequisites
 
-[Install Eclipse][eclipse] <br>
-[Install Android SDK][AndroidSDK] <br>
-[Install Android ADT][AndroidADT] <br>
-[Download the latest Nextpeer Andoid SDK] [LatestSDK] <br>
-[Download the Nextpeer-libGDX example][libgdxexample] <br>
+* [Install Eclipse][eclipse]
+* [Install Android SDK][AndroidSDK]
+* [Install Android ADT][AndroidADT]
+* [Download the latest Nextpeer Andoid SDK] [LatestSDK]
+* [Download the Nextpeer-libGDX example][libgdxexample]
 
 <a id="ImportProjects"></a>
 ## Import Projects
 The Nextpeer-libGDX example has 2 folders:
 
-+ `starter` - which contains the start project for this tutorial. Use this project when going through this tutorial.
-+ `final`- which contains the complete source code for this tutorial. This version is how your code will look like once you’ve completed the tutorial.
++ `starter` - contains the initial version of companion project for this tutorial (without Nextpeer integration). Use this project when going through this tutorial.
++ `final` - contains the final version companion project for this tutorial (with Nextpeer integration). This version is how your code will look like once you’ve completed the tutorial.
 
-The `starter` folder has 3 Java projects in it: <br>
-**superjumper** - The source code for the game core (libGDX)<br>
-**superjumper-android** - The Android project for the game<br>
-**NextpeerConnect** - NextpeerAndroid SDK (we suggest updating this folder with the latest Android SDK from our developer’s dashboard).<br>
+The `starter` folder has 3 Java projects in it:
 
-###Import those projects into Eclipse
-Import `superjumper`, `superjumper-android` and `NextpeerConnect` into Eclipse. When importing, be sure to use the standard general import option under “General” labeled “Existing Projects into Workspace”.<br>
-When building the projects the “superjumper-android” should be the only project which doesn’t compile. If anything gets goofy during this import process, try closing and re-opening projects, doing clean builds, or re-importing.
+* **superjumper** - the source code for the game core (libGDX)
+* **superjumper-android** - the Android project for the game
+* **NextpeerConnect** - the Nextpeer Android SDK (we suggest updating this folder with the latest Android SDK from our developer’s dashboard)
+
+Import `superjumper`, `superjumper-android` and `NextpeerConnect` into Eclipse. When importing, be sure to use the standard general import option under *General*, labeled *Existing Projects into Workspace*.
+
+When building the projects, the “superjumper-android” should be the only project which doesn’t compile. If anything goes wrong during this import process, try closing and re-opening projects, doing clean builds, or re-importing.
 
 <a id="SetupTheManifest"></a>
-##Setup The Manifest For superjumper-android
-###Add Required Permissions
-Next, open the AndroidManifest.xml file in the `superjumper-android` project and switch to the Permissions tab. Click Add..., then Uses Permission, then OK, You'll see Uses Permission in the Permissions list, which you should click to highlight. Pick `android.permission.INTERNET` from the drop-down menu to the right.
-If you’re using raw XML, copy and paste the following line into the manifest file:
+## Setup the Manifest for superjumper-android
+
+### Add Required Permissions
+
+Open the AndroidManifest.xml file in the `superjumper-android` project and switch to the Permissions tab. Click *Add…,* then *Uses Permission*, then *OK*. (You'll see *Uses Permission* in the *Permissions* list, which you should click to highlight.) Pick `android.permission.INTERNET` from the drop-down menu to the right. If you’re using raw XML, copy and paste the following line into the manifest file:
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-###Add The NextpeerActivity
-Under Application Nodes, click Add…, then Activity, then OK. Once created, select the Activity in the list. It should be named Activity. On the bottom right panel in the ‘Name*’ field enter `com.nextpeer.android.NextpeerActivity`. Save the AndroidManifest.xml file.
-If you’re using raw XML, copy and paste the following line into the manifest file:
+### Add the NextpeerActivity
+
+Under Application Nodes, click Add…, then Activity, then OK. Once created, select the Activity in the list. It should be named Activity. On the bottom right panel in the ‘Name*’ field enter `com.nextpeer.android.NextpeerActivity`. Save the AndroidManifest.xml file. If you’re using raw XML, copy and paste the following line into the manifest file:
 	
 	<activity android:name="com.nextpeer.android.NextpeerActivity" />
 
 
-###Update The Package Identifier
-To avoid collisions with other games, change the package identifier of the app to something unique, say “com.yourcompany.sample.superjumper”.
-Like so:
+### Update the Package Identifier
+
+To avoid collisions with other games, change the package identifier of the app to a unique value. A reverse domain name is recommended:
 
 	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     	  package="com.mycompany.samples.superjumper"
+
 Be sure to save the file before closing it.
 
 <a id="CreateGameEntry"></a>
-##Create A Game Entry In The Nextpeer Dashboard
-The next part involves creating a new game in Nextpeer’s developer [dashboard][dashboard]. Without a game in the dashboard, you won’t be able to connect the game to the Nextpeer network.
+## Create a Game Entry in the Nextpeer Dashboard
 
-Start out by logging into the dashboard. If you don’t have a Nextpeer account, just sign up for one. Go to the Games tab and create a new Android game called “SuperJumper”.
-Add the package identifier you’ve picked to the “Package” field. Tap “Save” to save your changes.
-Copy the “Game key” value to the clipboard, you will need this to initialize the SDK.
+This part involves creating a new game in Nextpeer’s developer [dashboard][dashboard]. Without a game in the dashboard, you won’t be able to connect the game to the Nextpeer network.
+
+Log into the dashboard. If you don’t have a Nextpeer account, you need to sign up (it's free). Go to the *Games* tab and create a new Android game called “SuperJumper”. Set the *Package* field to the package identifier from the previous section. Click *Save* to save your changes. Copy the *Game key* value to the clipboard, you will need this to initialize the SDK.
 
 ![gamekey][gamekey]
 
 
-###Integrating Nextpeer In Your Game
-Inside `superjumper` project, under the `com.nextpeer.libgdx` package you can find the  interface between the core java game project to the Android project (as instructed by libgdx’s wiki under [ApplicationPlatformSpecific)][wiki].<br>
-The `com.nextpeer.libgdx` package has an abstract class named `Tournaments.java`. This abstract class defines OS specific code which is required by the Nextpeer platform. You can see the Android implementation for this abstract class under `superjumper-android` with `AndroidTournaments.java`.
+### Integrating Nextpeer in Your Game
 
+Inside `superjumper` project, under the `com.nextpeer.libgdx` package you can find the interface between the core Java game project and the Android project (as instructed by libgdx’s wiki under [ApplicationPlatformSpecific][wiki]). The `com.nextpeer.libgdx` package has an abstract class named `Tournaments.java`. This is an OS-independent interface to Nextpeer. You will need to use a concrete, OS-specific implementation in your game. For example, the Android implementation is called `AndroidTournaments.java` (in the `superjumper-android` project).
 
 Paste they game key you received from the Nextpeer developer dashboard in the constructor of `AndroidTournaments.java`. Build the project. At this point the `superjumper-android` project should compile properly.
 
 <a id="Expanding"></a>
-##Expanding The Game-core To Support The Tournaments Class
-We’ll start out by adding the tournaments to the game logic.
-Navigate to the “superjumper/com.badlogicgames.superjumper/SuperJumper.java”  class. We will modify it to have a Tournaments member and to accept via the constructor.
-The code should look like this:
+## Expanding the Game-Core to Support the Tournaments Class
+
+We’ll start by adding the tournaments to the game logic. Navigate to the `superjumper/com.badlogicgames.superjumper/SuperJumper.java` class. We will modify it to have a Tournaments member and to accept it via the constructor. The code should look like this:
 	
 	Tournaments tournaments = null;
 
@@ -85,37 +85,35 @@ The code should look like this:
 	}
 	
 	public SuperJumper(Tournaments tournaments) {
-		// If we have a supported tournaments object, set the game as callback
+		// Make sure Nextpeer is supported:
 		if (tournaments != null && tournaments.isSupported()) {
 			this.tournaments = tournaments;
 		}
 	}
 
-The next thing we’ll do is have the SuperJumper class comform to the `TournamentsCallback.java` interface. This interface will let us know when a particular tournament is supposed to start or end. For the time being, we’ll just leave those methods empty:
+Next, we'll have the SuperJumper class conform to the `TournamentsCallback.java` interface. This interface defines callbacks which will be called when a tournament is about to start or end. For now we’ll just leave these methods empty:
 
 	@Override
 	public void onTournamentStart(long tournamentRandomSeed) 
 	{
-		// Start the tournament!
+		// Stat the tournament
 	}
+	
 	@Override
 	public void onTournamentEnd() 
 	{
-		// End the tournament
+		// Tournament ended - clean up
 	}
 
 <a id="TheNextpeerPluginClass"></a>
-##The NextpeerPlugin Class
-Since different parts of the game will require access to the tournaments class, we should wrap it with a singleton (in the same manner as Settings and Assets are wrapped).
-Take a look on the `NextpeerPlugin.java` class in `superjumper` project. It holds the instance of the Tournaments object so it can be safely accessed from the different game screens at different points in time.
+## The NextpeerPlugin Class
+
+Since different parts of the game will require access to the Tournaments object, we should wrap it with a singleton (in the same manner as Settings and Assets). See the `NextpeerPlugin.java` class in `superjumper` project. It holds the instance of the Tournaments class so it can be safely accessed from the different game screens at any time.
 
 <a id="StartingandFinishingTournaments"></a>
-##Starting And Finishing Tournaments
+## Starting And Finishing Tournaments
 
-Let’s go back to the `SuperJumper.java` file and look at the method that is in charge of starting tournaments - `onTournamentStart(long tournamentRandomSeed)`.
-This method will be triggered by Nextpeer when it’s time to start the tournament and show the game sequence. Nextpeer will hide its user interface in order for the game to show up.
-The `tournamentRandomSeed` paramater can be used to seed your random generator. All players are handed identical random seeds so this guarantees players all compete using the same exact level, enemies, powerups etc. 
-Since the World class is responsible for generating the level, we will use this value later on when we’ll create the Random object. For now, let’s store the value in the `NextpeerPlugin` container and then switch to the GameScreen screen:
+Go back to the `SuperJumper.java` file and find the method that is in charge of starting tournaments - `onTournamentStart(long tournamentRandomSeed)`. This method will be called by Nextpeer when it’s time to start the tournament and show the game sequence. Nextpeer will hide its user interface in order for the game to show up. The `tournamentRandomSeed` parameter can be used to seed a random number generator. All players are handed identical random seeds so this guarantees all players compete on the same exact level, with the same enemies, power-ups, etc. Since the World class is responsible for generating the level, we will use this value later on when we create the Random object. For now, we'll store the value in the `NextpeerPlugin` container and then switch to the GameScreen screen:
 
 	public void onTournamentStart(long tournamentRandomSeed) {
     	// Start the game
@@ -123,7 +121,7 @@ Since the World class is responsible for generating the level, we will use this 
 	    setScreen(new GameScreen(this));
 	}
 
-This takes care of starting a tournament, but what should we do once the tournament ends? Well, we should switch back to the main menu, that way if the player exits Nextpeer she will be taken back to the main menu screen.
+When the tournament ends, we will switch back to the main menu, so when the player exits Nextpeer she will be taken back to the main menu screen.
 
 	public void onTournamentEnd() {
     	// End the game, switch to main menu
@@ -132,15 +130,16 @@ This takes care of starting a tournament, but what should we do once the tournam
 	}
 	
 <a id="LaunchingNextpeer"></a>
-##Launching Nextpeer
-Now that we’ve set the callback handlers, we can open up an entrypoint to Nextpeer for the player. Basically, we want the player to be taken to Nextpeer’s screen once she taps “Play”. Modify the update() method in superjumper/com.badlogicgames.superjumper/MainMenuScreen.java as follows (add the code when the player taps the “Play” rect):
+## Launching Nextpeer
+
+Now that we’ve set the callback handlers, we can set up an entry point to Nextpeer. We'll open Nextpeer when the player taps *Play*. Modify the `update()` method in `superjumper/com.badlogicgames.superjumper/MainMenuScreen.java` as follows:
 
 	if (OverlapTester.pointInRectangle(playBounds, touchPoint.x, touchPoint.y)) {
     	Assets.playSound(Assets.clickSound);
     
     	// game.setScreen(new GameScreen(game));
-    
-		// Launch Nextpeer the dashboard when someone taps on Play
+    	
+		// Launch Nextpeer the dashboard when the player taps Play
     	if (NextpeerPlugin.isAvailable()) {
 			NextpeerPlugin.tournaments().launch();
     	}
@@ -152,12 +151,12 @@ Now that we’ve set the callback handlers, we can open up an entrypoint to Next
     	return;
 	}
 
-With this code, if the OS supports Nextpeer then it will be launched once the player taps “Play”. If not then a single player game is started.
+This way, if the OS supports Nextpeer, it will be launched once the player taps “Play”. If not, a single player game will start.
 
 <a id="ReportingScore"></a>
-##Reporting Score
-Whilst a tournament is ongoing, Nextpeer needs to keep track of each player's score in real time. If a player's score changes (for better or for worse) during a tournament, it needs to be reported to Nextpeer. 
-Go to the `GameScreen.java` class in the superjumper project. Find the `updateRunning()` method and add a call to `reportScoreForCurrentTournament()` once lastScore changes (add the following code at the bottom of the method):
+## Reporting the Score
+
+While a tournament is ongoing, Nextpeer needs to keep track of each player's score in real time. If a player's score changes (for better or worse) during a tournament, it needs to be reported to Nextpeer. Go to the `GameScreen.java` class in the `superjumper` project. Find the `updateRunning()` method and add a call to `reportScoreForCurrentTournament()` at the bottom of `updateRunning()`:
 
 	if (world.score != lastScore) {
 		lastScore = world.score;
@@ -169,8 +168,8 @@ Go to the `GameScreen.java` class in the superjumper project. Find the `updateRu
 	}
 
 <a id="ForfeitingaTournament"></a>
-##Forfeiting A Tournament
-When a player wishes to exit  the game mid-tournament, Nextpeer needs to be notified so that it can remove that player from the tournament. In `GameScreen.java`, find the `updatePaused()` method and inside it locate the section where the user opts to return to the main menu. There, we’ll add a call to `reportForfeitForCurrentTournament()` of the Tournaments object if the user wish to exit the game.
+## Forfeiting a Tournament
+When a player wishes to exit the game mid-tournament, Nextpeer needs to be notified so that it can remove that player from the tournament. In `GameScreen.java`, find the `updatePaused()` method and inside it locate the section where the user opts to return to the main menu. Add a call to `reportForfeitForCurrentTournament()`:
 
 	if (OverlapTester.pointInRectangle(quitBounds, touchPoint.x, touchPoint.y)) {
 		Assets.playSound(Assets.clickSound);	
@@ -184,8 +183,9 @@ When a player wishes to exit  the game mid-tournament, Nextpeer needs to be noti
 	}
 
 <a id="EndingaTournament"></a>
-##Ending A Tournament
-In SuperJumper, a tournament ends once the player falls off the edge of the screen. Once that happens, the Nextpeer tournament for that player should end and whatever score that player had at that point is that player’s final score. To report on that, find the `updateLevelEnd()` method in the GameScreen class, and add a call to the `reportControlledTournamentOverWithScore()` method:
+## Ending a Tournament
+
+In SuperJumper, a tournament ends once the player falls off the edge of the screen or when the player reaches the castle. Once that happens, the Nextpeer tournament for that player should end and whatever score that player had at that point is that player’s final score. To report the end of the tournament, find the `updateLevelEnd()` method in the `GameScreen` class, and add a call to the `reportControlledTournamentOverWithScore()` method:
 
 	private void updateLevelEnd () {
 	
@@ -200,8 +200,6 @@ In SuperJumper, a tournament ends once the player falls off the edge of the scre
 			}
 		}
 	}
-
-
 
 Add the same code in the `updateGameOver()` method:
 
@@ -218,8 +216,9 @@ Add the same code in the `updateGameOver()` method:
 	}
 
 <a id="SameLevel"></a>
-##Making Sure All Players Are On The Same Level
-In order to keep the game fair for all players we need to make sure the players playing the exact same level. This is done by setting the random seed. Go to the World class and locate the constructor method. There, use the random seed we’ve stored in `NextpeerPlugin` and pass it to Random’s constructor (right before `generateLevel()`):
+## Making Sure all Players Are on the Same Level
+
+In order to keep the game fair for all players we need to make sure all the players are playing the exact same level. This is done by setting the seed for the random number generator. Go to the `World` class and locate the constructor. There, use the random seed we’ve stored in `NextpeerPlugin` and pass it to Random’s constructor (right before `generateLevel()`):
 
 	public World (WorldListener listener) {
 		this.bob = new Bob(5, 1);
@@ -242,7 +241,6 @@ In order to keep the game fair for all players we need to make sure the players 
 			rand = new Random(randomSeed);	
 		}
 
-
 		generateLevel();
 
 		this.heightSoFar = 0;
@@ -251,8 +249,9 @@ In order to keep the game fair for all players we need to make sure the players 
 	}
 
 <a id="AndroidSpecific"></a>
-##Android Specific Integration
-Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class. We will need to pass the `AndroidTournaments` instance to the `SuperJumper` game constructor. We will also need to handle the use case of pressing on the back button while in tournament mode (so the other active players will know that the player has forfeit the game). Expend the `SuperJumperAndroid.java` class with the following code:
+## Android-Specific Integration
+
+Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class. We will need to pass the `AndroidTournaments` instance to the `SuperJumper` game constructor. We will also need to handle the use case of pressing on the back button while in tournament mode (so the other active players will know that the player has forfeit the game). Expand the `SuperJumperAndroid.java` class with the following code:
 
 	    private AndroidTournaments mTournaments = null;
 	
@@ -261,18 +260,16 @@ Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class.
 	    public void onCreate (Bundle savedInstanceState) {
 	    	super.onCreate(savedInstanceState);
             
-            // Initialize the tournament instance with the Context
 	    	mTournaments = new AndroidTournaments(this);
             
-            // Pass the Android tournaments instance to the game
 	    	SuperJumper superJumper = new SuperJumper(mTournaments);
     		initialize(superJumper, false);
 	    }
 
-        /** The user pressed on the back button */
+        /** The user pressed the back button */
         @Override
         public void onBackPressed() {
-    	    // If the game is in tournament mode -> forfeit the tournament.
+    	    // If the game is in tournament mode, forfeit the tournament:
     	    if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
     		    mTournaments.reportForfeitForCurrentTournament();
     	    }
@@ -280,13 +277,17 @@ Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class.
         }
     
 <a id="NextSteps"></a>
-##Next Steps
-Congratulations!
-You're all done! You should be able to compile and run your new Super Jumper game, complete with Nextpeer-enabled multiplayer features! 
-You can continue building the project by adding advanced player to player communication, for example show the other players on the screen, letting players interact with the other players whilst in-game (with powerups) or even make the game time-based!
-Checkout Nextpeer’s version for the game on [Play Store][playStore].
+## Next Steps
 
-Thanks for following the Super Jumper - libGDX Example! If you have any questions or comments, we'd love to hear your thoughts. Please send all feedback through the [support@nextpeer.com][support].
+Congratulations!
+
+You're all done! You should be able to compile and run your new Super Jumper game, complete with Nextpeer-enabled multiplayer features! 
+
+You can continue building the project by adding advanced player-to-player communication. For example, show the other players on the screen or let players interact with the other players while in-game (with power-ups)!
+
+Check out Nextpeer’s version of the game on the [Play Store][playStore].
+
+Thanks for following the Super Jumper - libGDX Example! If you have any questions or comments, we'd love to hear your thoughts. Please send all feedback to [support@nextpeer.com][support].
 
 [libgdx]: http://libgdx.badlogicgames.com/
 [np]: http://www.nextpeer.com
