@@ -92,7 +92,7 @@ The code should look like this:
 	}
 
 The next thing we’ll do is have the SuperJumper class comform to the `TournamentsCallback.java` interface. This interface will let us know when a particular tournament is supposed to start or end. For the time being, we’ll just leave those methods empty:
-
+
 	@Override
 	public void onTournamentStart(long tournamentRandomSeed) 
 	{
