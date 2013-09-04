@@ -284,7 +284,7 @@ Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class.
 Congratulations!
 You're all done! You should be able to compile and run your new Super Jumper game, complete with Nextpeer-enabled multiplayer features! 
 You can continue building the project by adding advanced player to player communication, for example show the other players on the screen, letting players interact with the other players whilst in-game (with powerups) or even make the game time-based!
-Checkout Nextpeer’s version for the game on [Playstore][playStore].
+Checkout Nextpeer’s version for the game on [Play Store][playStore].
 
 Thanks for following the Super Jumper - libGDX Example! If you have any questions or comments, we'd love to hear your thoughts. Please send all feedback through the [support@nextpeer.com][support].
 
