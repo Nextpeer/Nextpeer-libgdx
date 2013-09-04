@@ -93,4 +93,12 @@ public final class AndroidTournaments extends Tournaments {
     public void reportForfeitForCurrentTournament() {
     	Nextpeer.reportForfeitForCurrentTournament();
     }
+
+    /**
+     * Does the game is in a tournament at the moment or no.
+	 * @return true if it the game is in a tournament mode, false otherwise
+     */
+    public boolean isCurrentlyInTournament() {
+    	return Nextpeer.isCurrentlyInTournament();
+    }
 }

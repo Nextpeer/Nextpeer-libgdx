@@ -25,7 +25,7 @@
         android:maxLines="1"
         android:layout_toRightOf="@+id/np__invite_fb_friends_item_thumbnail"
         android:layout_marginRight="@dimen/np__invite_fb_friends_list_item_margin"
-        android:text="Player Name" />
+        android:text="@string/np__application_name" />
 
     <Button
         android:id="@+id/np__invite_fb_friends_item_button"
@@ -34,7 +34,6 @@
         android:layout_alignBottom="@+id/np__invite_fb_friends_item_thumbnail"
         android:layout_alignTop="@+id/np__invite_fb_friends_item_thumbnail"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/np__invite_fb_friends_list_item_margin"
-        android:text="Add" />
+        android:layout_marginRight="@dimen/np__invite_fb_friends_list_item_margin"/>
 
 </RelativeLayout>

@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+	<RelativeLayout
+		android:id="@+id/np__home_current_user_container"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@null"
+	    android:padding="@dimen/np__content_padding" >
+	
+		    <com.nextpeer.android.NextpeerUIImageView
+		        android:id="@+id/np__home_current_player_thumbnail"
+		        style="@style/NP__.Widget.Replacement"
+		        android:layout_width="@dimen/np__replacement_thumbnail_size"
+		        android:layout_height="@dimen/np__replacement_thumbnail_size"
+		        android:layout_marginRight="@dimen/np__home_current_player_thumbnail_right_margin" />
+		
+		    <TextView
+		        android:id="@+id/np__home_current_player_name"
+		        style="@style/NP__.Widget.Text.Content.Medium"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+		        android:layout_alignBottom="@+id/np__home_current_player_thumbnail"
+		        android:layout_alignTop="@+id/np__home_current_player_thumbnail"
+		        android:layout_toRightOf="@+id/np__home_current_player_thumbnail"
+		        android:ellipsize="end"
+		        android:gravity="center_vertical"
+		        android:maxLines="1"
+		        android:text="@string/np__application_name" />
+	</RelativeLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/np__home_play_random_tournament_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/np__home_current_user_container"
+       	android:gravity="center"
+        android:text="@string/np__home_play_random_tournament_button" />
+    <Button
+        android:id="@+id/np__home_play_with_fb_friends_tournament_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/np__home_play_random_tournament_button"
+        android:text="@string/np__home_play_with_fb_friends_tournament_button" />
+    
+    <Button
+        android:id="@+id/np__home_your_current_matches_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/np__home_play_with_fb_friends_tournament_button"
+        android:text="@string/np__home_your_current_matches_button" />
+    
+</RelativeLayout>

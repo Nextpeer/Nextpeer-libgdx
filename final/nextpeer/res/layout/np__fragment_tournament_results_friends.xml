@@ -9,19 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/np__tournament_bar_height"
         android:background="@color/np__tournament_results_replay_bar_background"
-        android:padding="@dimen/np__content_padding"
+        android:padding="@dimen/np__tournament_results_friends_play_again_bar_container_padding"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/np__tournament_results_friends_replay_bar_button_replay"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/np__tournament_results_replay_bar_button_replay_selector"
-            android:paddingTop="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
-            android:paddingBottom="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
-            android:paddingLeft="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
-            android:paddingRight="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
             android:drawableLeft="@drawable/np__ic_replay_white"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="center"

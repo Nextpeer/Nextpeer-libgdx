@@ -6,7 +6,7 @@
 		style="@style/NP__.Fragment">
     
     <LinearLayout
-        android:id="@+id/np__invite_fb_friends_filter_container"
+        android:id="@+id/np__current_matches_filter_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -14,46 +14,32 @@
         android:visibility="visible"> 
 
         <Button
-            android:id="@+id/np__invite_fb_friends_filter_show_all_button"
+            android:id="@+id/np__current_matches_filter_ongoing_button"
             style="@style/NP__.Widget.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/np__widget_button_margin"
             android:layout_weight="0.5"
             android:background="@drawable/np__widget_button_negative_selector"
-            android:text="@string/np__invite_fb_friends_filter_show_all_button" />
+            android:text="@string/np__current_matches_filter_ongoing_button" />
         <Button
-            android:id="@+id/np__invite_fb_friends_filter_show_action_button"
+            android:id="@+id/np__current_matches_filter_past_button"
             style="@style/NP__.Widget.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/np__widget_button_margin"
             android:layout_weight="0.5"
             android:background="@drawable/np__widget_button_negative_selector"
-            android:text="@string/np__invite_fb_friends_filter_show_active_button" />
-
+            android:text="@string/np__current_matches_filter_past_button" />
     </LinearLayout>
-	
-	<RelativeLayout
-	    android:layout_width="fill_parent" 
-	    android:layout_height="fill_parent"
-        android:background="@null"
-        android:gravity="center" >
+    
     <ListView
-            android:id="@+id/np__invite_fb_friends_picker_list_view"
+            android:id="@+id/np__current_matches_list_view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+	        android:background="@null"
+	        android:gravity="center" 
             android:divider="@drawable/np__list_divider"
             android:fastScrollEnabled="true"
             android:scrollbars="vertical"/>
-
-    <ProgressBar android:id="@+id/np__invite_fb_friends_progress_circle"
-                 android:indeterminate="true"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 style="@android:style/Widget.ProgressBar"
-                 android:layout_centerInParent="true"
-                 android:visibility="invisible"
-            />
-	</RelativeLayout>
 </LinearLayout>

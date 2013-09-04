@@ -48,6 +48,9 @@
 	<string name="np__tournament_loading_loading_bar_title_many">Found %d players</string>
 	<string name="np__tournament_loading_label">THIS IS YOU</string>
 	
+	<!-- Tournament - Loading Friends-->
+	<string name="np__tournament_loading_play_now_bar_title">Start Play</string>
+	
 	<!-- Tournament - Results -->
 	<string name="np__tournament_results_title">Tournament Results</string>
 	<string name="np__tournament_results_replay_bar_button_replay">Play Again!</string>
@@ -60,4 +63,19 @@
 	<string name="np__tournament_disconnect_title">Lost connection</string>
 	<string name="np__tournament_disconnect_dialog_text">Please check your network connections and try again later.</string>
 		
+	<!-- Home screen -->
+	<string name="np__home_title">Welcome</string>
+	<string name="np__home_play_random_tournament_button">Quick Play</string>
+	<string name="np__home_play_with_fb_friends_tournament_button">Play with Friends</string>
+	<string name="np__home_your_current_matches_button">Your matches</string>
+		
+	<!-- Invite FB friends screen -->
+	<string name="np__invite_fb_friends_title">Invite friends</string>
+	<string name="np__invite_fb_friends_filter_show_all_button">SHOW ALL</string>
+	<string name="np__invite_fb_friends_filter_show_active_button">SHOW ACTIVE</string>
+		
+	<!-- Current matches screen -->
+	<string name="np__current_matches_title">Matches with Friends</string>
+	<string name="np__current_matches_filter_ongoing_button">ON GOING</string>
+	<string name="np__current_matches_filter_past_button">PAST</string>
 </resources>

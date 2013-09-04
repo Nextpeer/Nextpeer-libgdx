@@ -66,4 +66,10 @@ public abstract class Tournaments {
      * Call this method when the user wishes to exit the current tournament (for example to go back to the main menu).
      */
     public abstract void reportForfeitForCurrentTournament();
+    
+    /**
+     * Does the game is in a tournament at the moment or no.
+	 * @return true if it the game is in a tournament mode, false otherwise
+     */
+    public abstract boolean isCurrentlyInTournament();
 }

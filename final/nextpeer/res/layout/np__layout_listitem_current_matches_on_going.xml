@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/np__content_padding"
+    android:background="@null" >
+        
+    <View
+        android:id="@+id/np__current_matches_on_going_your_rank_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/np__blue" />
+
+
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__current_matches_on_going_first_player_thumbnail"
+        style="@style/NP__.Widget.Replacement"
+        android:layout_width="@dimen/np__replacement_thumbnail_size"
+        android:layout_height="@dimen/np__replacement_thumbnail_size"
+        android:layout_alignTop="@+id/np__current_matches_on_going_your_rank_view"
+        android:layout_toRightOf="@+id/np__current_matches_on_going_your_rank_view"
+        android:layout_marginTop="@dimen/np__current_matches_list_item_margin"
+        android:layout_marginLeft="@dimen/np__current_matches_list_item_margin"
+        android:gravity="center_vertical"
+        android:contentDescription="@string/np__application_name"
+        android:src="@color/np__orange" />
+    
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__current_matches_on_going_second_player_thumbnail"
+        style="@style/NP__.Widget.Replacement"
+        android:layout_width="@dimen/np__replacement_thumbnail_size"
+        android:layout_height="@dimen/np__replacement_thumbnail_size"
+        android:layout_alignTop="@+id/np__current_matches_on_going_your_rank_view"
+        android:layout_toRightOf="@+id/np__current_matches_on_going_first_player_thumbnail"
+        android:layout_marginTop="@dimen/np__current_matches_list_item_margin"
+        android:layout_marginLeft="@dimen/np__current_matches_list_item_margin"
+        android:gravity="center_vertical"
+        android:src="@color/np__orange"
+        android:contentDescription="@string/np__application_name" />
+    
+    <com.nextpeer.android.NextpeerUIImageView
+        android:id="@+id/np__current_matches_on_going_third_player_thumbnail"
+        style="@style/NP__.Widget.Replacement"
+        android:layout_width="@dimen/np__replacement_thumbnail_size"
+        android:layout_height="@dimen/np__replacement_thumbnail_size"
+        android:layout_alignTop="@+id/np__current_matches_on_going_your_rank_view"
+        android:layout_toRightOf="@+id/np__current_matches_on_going_second_player_thumbnail"
+        android:layout_marginTop="@dimen/np__current_matches_list_item_margin"
+        android:layout_marginLeft="@dimen/np__current_matches_list_item_margin"
+        android:gravity="center_vertical"
+        android:src="@color/np__orange"
+        android:contentDescription="@string/np__application_name" />
+    
+    <TextView
+        android:id="@+id/np__current_matches_on_going_additional_players"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/np__current_matches_on_going_third_player_thumbnail"
+        android:layout_alignBottom="@+id/np__current_matches_on_going_third_player_thumbnail"
+        android:layout_toRightOf="@+id/np__current_matches_on_going_third_player_thumbnail"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/np__current_matches_list_item_margin"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <ImageView
+        android:id="@+id/np__current_matches_on_going_time_left_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/np__current_matches_on_going_first_player_thumbnail"
+        android:layout_below="@+id/np__current_matches_on_going_first_player_thumbnail"
+        android:layout_marginTop="@dimen/np__current_matches_list_item_margin"
+        android:src="@android:drawable/ic_lock_idle_alarm"
+        android:contentDescription="@string/np__application_name"  />
+    
+    <TextView
+        android:id="@+id/np__current_matches_on_going_time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/np__current_matches_on_going_time_left_icon"
+        android:layout_below="@+id/np__current_matches_on_going_first_player_thumbnail"
+        android:layout_marginTop="@dimen/np__current_matches_list_item_margin"
+        android:layout_marginLeft="@dimen/np__current_matches_list_item_margin"
+        android:text="@string/np__application_name"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</RelativeLayout>

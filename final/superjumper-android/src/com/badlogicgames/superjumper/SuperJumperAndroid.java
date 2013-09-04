@@ -22,11 +22,25 @@ import com.badlogic.gdx.backends.android.AndroidApplication;
 
 public class SuperJumperAndroid extends AndroidApplication {
 	/** Called when the activity is first created. */
+	private AndroidTournaments mTournaments = null;
+	
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		AndroidTournaments tournaments = new AndroidTournaments(this);
-		SuperJumper superJumper = new SuperJumper(tournaments);
+		mTournaments = new AndroidTournaments(this);
+		SuperJumper superJumper = new SuperJumper(mTournaments);
 		initialize(superJumper, false);
 	}
+
+	// Nextpeer integration: In case that the on back pressed and we still in game, we wish to forfeit the current game
+    @Override
+    public void onBackPressed() {
+    	// If the game is in a tournament mode and back button has been pressed, forfeit the tournament.
+    	if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
+    		mTournaments.reportForfeitForCurrentTournament();
+    	}
+
+		super.onBackPressed();
+    }
+	// Nextpeer integration
 }

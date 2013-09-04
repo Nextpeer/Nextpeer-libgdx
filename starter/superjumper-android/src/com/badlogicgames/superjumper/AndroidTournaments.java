@@ -88,8 +88,8 @@ public final class AndroidTournaments extends Tournaments {
     }
     
     /**
-     * Call this method when the user wishes to exit the current tournament (for example to go back to the main menu).
-     */
+    * Call this method when the user wishes to exit the current tournament (for example to go back to the main menu).
+    */
     public void reportForfeitForCurrentTournament() {
     	Nextpeer.reportForfeitForCurrentTournament();
     }
