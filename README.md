@@ -44,7 +44,7 @@ Open the AndroidManifest.xml file in the `superjumper-android` project and switc
 ### Add the NextpeerActivity
 
 Under Application Nodes, click Add…, then Activity, then OK. Once created, select the Activity in the list. It should be named Activity. On the bottom right panel in the ‘Name*’ field enter `com.nextpeer.android.NextpeerActivity`. Save the AndroidManifest.xml file. If you’re using raw XML, copy and paste the following line into the manifest file:
-	
+
 	<activity android:name="com.nextpeer.android.NextpeerActivity" />
 
 
@@ -52,8 +52,7 @@ Under Application Nodes, click Add…, then Activity, then OK. Once created, sel
 
 To avoid collisions with other games, change the package identifier of the app to a unique value. A reverse domain name is recommended:
 
-	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    	  package="com.mycompany.samples.superjumper"
+	<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mycompany.samples.superjumper">
 
 Be sure to save the file before closing it.
 
@@ -251,30 +250,52 @@ In order to keep the game fair for all players we need to make sure all the play
 <a id="AndroidSpecific"></a>
 ## Android-Specific Integration
 
-Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class. We will need to pass the `AndroidTournaments` instance to the `SuperJumper` game constructor. We will also need to handle the use case of pressing on the back button while in tournament mode (so the other active players will know that the player has forfeit the game). Expand the `SuperJumperAndroid.java` class with the following code:
+Navigate to the `superjumper-android` project's `SuperJumperAndroid.java` class. We will need to pass the `AndroidTournaments` instance to the `SuperJumper` game constructor. We will also need to handle the use case of navigation out of the game (pressing on the back button or navigate to the home screen) while in tournament mode (so the other active players will know that the player has forfeit the game). We will also let Nextpeer know that the user session has started. Expand the `SuperJumperAndroid.java` class with the following code:
 
-	    private AndroidTournaments mTournaments = null;
+	private AndroidTournaments mTournaments = null;
 	
-        /** Called when the activity is first created. */
-	    @Override
-	    public void onCreate (Bundle savedInstanceState) {
-	    	super.onCreate(savedInstanceState);
-            
-	    	mTournaments = new AndroidTournaments(this);
-            
-	    	SuperJumper superJumper = new SuperJumper(mTournaments);
-    		initialize(superJumper, false);
-	    }
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate (Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		mTournaments = new AndroidTournaments(this);
+		
+		SuperJumper superJumper = new SuperJumper(mTournaments);
+		initialize(superJumper, false);
+	}
+    	
+	// Notify the beginning of a user session.
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
+		if (mTournaments != null) {
+			mTournaments.onStart();
+		}
+	}
 
-        /** The user pressed the back button */
-        @Override
-        public void onBackPressed() {
-    	    // If the game is in tournament mode, forfeit the tournament:
-    	    if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
-    		    mTournaments.reportForfeitForCurrentTournament();
-    	    }
-		    super.onBackPressed();
-        }
+	// Let Nextpeer know that the user session has ended while in tournament
+	@Override 
+	public void onStop() {
+		super.onStop();
+		
+		// If there is an on-going tournament make sure to forfeit it
+		if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
+			mTournaments.reportForfeitForCurrentTournament();
+		}
+	}
+	
+	/** The user pressed the back button */
+	@Override
+	public void onBackPressed() {
+		// If the game is in tournament mode, forfeit the tournament:
+		if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
+			mTournaments.reportForfeitForCurrentTournament();
+		}
+		
+		super.onBackPressed();
+	}
     
 <a id="NextSteps"></a>
 ## Next Steps
@@ -283,7 +304,7 @@ Congratulations!
 
 You're all done! You should be able to compile and run your new Super Jumper game, complete with Nextpeer-enabled multiplayer features! 
 
-You can continue building the project by adding advanced player-to-player communication. For example, show the other players on the screen or let players interact with the other players while in-game (with power-ups)!
+You can continue building the project by adding advanced player-to-player communication. For example, show the other players on the screen or let players interact with the other players while in-game (with power-ups). You can also let your players challenge their Facebook friends by completing the required steps for Facebook integration (for more on that, follow our [Android quick start][docs]).
 
 Check out Nextpeer’s version of the game on the [Play Store][playStore].
 
@@ -296,7 +317,7 @@ Thanks for following the Super Jumper - libGDX Example! If you have any question
 [AndroidSDK]: http://developer.android.com/sdk/index.html
 [AndroidADT]: http://developer.android.com/sdk/eclipse-adt.html#installing
 [LatestSDK]: https://developers.nextpeer.com/download
-[libgdxexample]: https://github.com/ItamarM/Nextpeer-libgdx/archive/master.zip
+[libgdxexample]: https://github.com/Nextpeer/Nextpeer-libgdx/archive/master.zip
 [wiki]: https://code.google.com/p/libgdx/wiki/ApplicationPlatformSpecific
 [dashboard]: https://developers.nextpeer.com/games
 [playstore]: https://play.google.com/store/apps/details?id=com.nextpeer.android.example
