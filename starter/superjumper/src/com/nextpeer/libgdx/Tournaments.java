@@ -72,4 +72,9 @@ public abstract class Tournaments {
 	 * @return true if it the game is in a tournament mode, false otherwise
      */
     public abstract boolean isCurrentlyInTournament();
+	
+    /**
+     * Call this method to report that the view is visible to the user.
+     */
+    public void onStart() {}
 }

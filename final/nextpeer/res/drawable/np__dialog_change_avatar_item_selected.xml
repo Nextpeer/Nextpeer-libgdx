@@ -3,7 +3,7 @@
 
     <stroke 
         android:width="4dp"
-        android:color="@color/np__orange_dark" />
+        android:color="@color/np__nextpeer_orange_selected" />
 
     <padding
         android:bottom="4dp"

@@ -9,18 +9,16 @@
     <com.nextpeer.android.NextpeerUIImageView
         android:id="@+id/np__tournament_selection_tournament_thumbnail"
         style="@style/NP__.Widget.Replacement"
-        android:layout_width="@dimen/np__replacement_thumbnail_size"
-        android:layout_height="@dimen/np__replacement_thumbnail_size"
-        android:layout_marginRight="@dimen/np__replacement_thumbnail_margin" />
+        android:layout_width="@dimen/np__tournament_selector_item_thumbnail_size"
+        android:layout_height="@dimen/np__tournament_selector_item_thumbnail_size"
+        android:layout_marginRight="@dimen/np__tournament_selector_item_thumbnail_margin" />
 
     <TextView
         android:id="@+id/np__tournament_selection_tournament_title"
-        style="@style/NP__.Widget.Text.Content.Medium"
+        style="@style/NP__.TournamentSelector.ListItem.TournamentName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:ellipsize="end"
         android:gravity="center_vertical"
-        android:maxLines="1"
-        android:text="asldkmasldkm asdlkmasl kma lsdkm alskd" />
+        android:text="@string/np__application_name" />
 
 </LinearLayout>

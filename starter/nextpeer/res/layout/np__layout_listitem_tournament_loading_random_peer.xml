@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@null"
-    android:padding="@dimen/np__content_padding" >
+    android:padding="@dimen/np__tournament_cell_padding" >
 
     <com.nextpeer.android.NextpeerUIImageView
         android:id="@+id/np__tournament_loading_random_peer_thumbnail"
         style="@style/NP__.Widget.Replacement"
-        android:layout_width="@dimen/np__replacement_thumbnail_size"
-        android:layout_height="@dimen/np__replacement_thumbnail_size"
+        android:layout_width="@dimen/np__tournament_loading_player_thumbnail_size"
+        android:layout_height="@dimen/np__tournament_loading_player_thumbnail_size"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="@dimen/np__replacement_thumbnail_margin" />
+        android:layout_marginRight="@dimen/np__tournament_cell_padding" />
 
     <TextView
         android:id="@+id/np__tournament_loading_random_peer_text_name"

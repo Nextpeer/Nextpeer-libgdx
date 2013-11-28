@@ -35,19 +35,19 @@
     -->
     
     <style name="NP__.TextAppearance.Large" parent="@android:style/TextAppearance.Large">
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">22sp</item>
     </style>
     
     <style name="NP__.TextAppearance.Medium" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">18sp</item>
     </style>
     
     <style name="NP__.TextAppearance.Small" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">14sp</item>
     </style>
     
     <style name="NP__.TextAppearance.Tiny" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">9dp</item>
+        <item name="android:textSize">9sp</item>
     </style>
 
     <!--
@@ -66,7 +66,7 @@
     </style>
 
     <style name="NP__.Widget.DummyActionBar.Text" parent="@android:style/Widget.TextView">
-        <item name="android:textColor">@color/np__dummy_action_bar_text_color</item>
+        <item name="android:textColor">@color/np__dummy_action_bar_text</item>
         <item name="android:padding">0dip</item>
         <item name="android:maxLines">1</item>
     </style>
@@ -83,8 +83,6 @@
     
     <style name="NP__.Widget.Replacement">
         <item name="android:background">@drawable/np__replacement_thumbnail_background</item>
-        <item name="android:minWidth">@dimen/np__replacement_thumbnail_size</item>
-        <item name="android:minHeight">@dimen/np__replacement_thumbnail_size</item>
         <item name="android:padding">0dip</item>
         <item name="android:src">@null</item>
     </style>
@@ -110,7 +108,7 @@
     </style>
 
     <style name="NP__.Widget.Text.Content.Title.Small" parent="NP__.Widget.Text.Content.Small">
-        <item name="android:textColor">@color/np__tournament_loading_loading_bar_text_color</item>
+        <item name="android:textColor">@color/np__tournament_loading_loading_bar_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -120,7 +118,7 @@
     </style>
 
     <style name="NP__.Widget.ListView.Context" parent="NP__.Widget.ListView">
-        <item name="android:divider">@color/np__content_line_separator_background_color</item>
+        <item name="android:divider">@color/np__content_line_separator_background</item>
         <item name="android:dividerHeight">@dimen/np__content_line_separator_width</item>
     </style>
 
@@ -143,33 +141,203 @@
         <item name="android:drawablePadding">-40dp</item>
     </style>
     
+    <style name="NP__.Widget.SwitchButton.Active" parent="NP__.Widget.Button">
+        <item name="android:minHeight">@dimen/np__widget_switch_button_height</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@color/np__switch_selector_active_text</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">0dp</item>
+    </style>
+    
+    <style name="NP__.Widget.SwitchButton.Deactive" parent="NP__.Widget.Button">
+        <item name="android:minHeight">@dimen/np__widget_switch_button_height</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@color/np__switch_selector_deactive_text</item>
+        <item name="android:background">@color/np__switch_selector_deactive_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">0dp</item>
+    </style>
     
     <!--
     	========================================================
-    	Notifications.
+    	Home.
     	======================================================== 
     -->
     
-    <style name="NP__.Notification">
-        <item name="android:background">@drawable/np__notification_background</item>
-        <item name="android:padding">@dimen/np__notification_padding</item>
-    </style>
-
-    <style name="NP__.Notification.Text" parent="@android:style/Widget.TextView">
-        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
-        <item name="android:gravity">center_vertical|start</item>
-        <item name="android:maxLines">3</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:padding">@dimen/np__notification_text_padding</item>
-        <item name="android:textColor">@color/np__notification_text</item>
+    <style name="NP__.Home.Text" parent="NP__.Widget.Text.Content.Large">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
     
-    <style name="NP__.Notification.BadgeText" parent="@android:style/Widget.TextView">
-        <item name="android:background">@drawable/np__ic_notification_badge_empty</item>
+    <style name="NP__.Home.PlayerName.Text" parent="NP__.Home.Text">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:textColor">@color/np__black</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    
+    <style name="NP__.Home.Button" parent="NP__.Widget.Button">
+        <item name="android:minHeight">@dimen/np__home_button_height</item>
+        <item name="android:padding">@dimen/np__home_button_padding</item>
+    </style>
+    
+    <style name="NP__.Home.Text.Button" parent="NP__.Home.Text">
+        <item name="android:textColor">@color/np__white</item>
         <item name="android:gravity">center</item>
-        <item name="android:padding">0dip</item>
+	    <item name="android:shadowColor">@color/np__grey_dark</item>
+	    <item name="android:shadowDx">1</item>
+	    <item name="android:shadowDy">1</item>
+	    <item name="android:shadowRadius">1</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Tournament selector.
+    	======================================================== 
+    -->
+    
+    <style name="NP__.TournamentSelector.ListItem.TournamentName" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:textColor">@color/np__black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Invite Friends.
+    	======================================================== 
+    -->
+    <style name="NP__.InviteFriends.ListItem.Button" parent="NP__.Widget.Button">
+        <item name="android:minWidth">@dimen/np__invite_fb_friends_list_item_default_size</item>
+        <item name="android:minHeight">@dimen/np__invite_fb_friends_list_item_default_size</item>
+        <item name="android:padding">@dimen/np__invite_fb_friends_list_item_button_padding</item>
+    </style>
+    
+    <style name="NP__.InviteFriends.ListItem.ProfileImage" parent="NP__.Widget.Replacement">
+        <item name="android:minWidth">@dimen/np__invite_fb_friends_list_item_default_size</item>
+        <item name="android:minHeight">@dimen/np__invite_fb_friends_list_item_default_size</item>
+    </style>
+    
+    <style name="NP__.InviteFriends.ListItem.ProfileName" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:textColor">@color/np__black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Tournament Loading.
+    	======================================================== 
+    -->
+    
+    <style name="NP__.TournamentLoading.PlayerName.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="NP__.TournamentLoading.Loading.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Tournament Results.
+    	======================================================== 
+    -->
+    
+    <style name="NP__.TournamentResults.Button" parent="@android:style/Widget.Button">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:paddingLeft">@dimen/np__tournament_results_button_padding</item>
+        <item name="android:paddingRight">@dimen/np__tournament_results_button_padding</item>
+        <item name="android:drawablePadding">@dimen/np__tournament_results_button_padding</item>
+        <item name="android:textColor">@color/np__white</item>
+        <item name="android:gravity">center</item>
+    </style>
+       
+    <style name="NP__.TournamentResults.Replay.Button" parent="NP__.TournamentResults.Button">
+        <item name="android:background">@drawable/np__tournament_results_replay_bar_button_replay_selector</item>
+        <item name="android:text">@string/np__tournament_results_replay_bar_button_replay</item>
+        <item name="android:drawableLeft">@drawable/np__ic_replay_white</item>
+    </style>
+    
+    <style name="NP__.TournamentResults.Player.Name.Text" parent="NP__.Widget.Text.Content.Small">
+        <item name="android:textColor">@color/np__black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Tournament Results Friends.
+    	======================================================== 
+    -->
+    
+    <style name="NP__.TournamentResults.Friends.TimeLeft.Box.Time.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@color/np__white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="NP__.TournamentResults.Friends.TimeLeft.Box.Time.Title" parent="NP__.Widget.Text.Content.Small">
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
-        <item name="android:textColor">@color/np__notification_text</item>
+        <item name="android:textColor">@color/np__white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+    <style name="NP__.TournamentResults.Friends.Archive.Button" parent="NP__.TournamentResults.Button">
+        <item name="android:background">@drawable/np__tournament_results_friends_archive_match_button_selector</item>
+        <item name="android:text">@string/np__tournament_results_friends_past_button_archive</item>
+        <item name="android:drawableLeft">@drawable/np__ic_remove_match</item>
+	    <item name="android:shadowColor">@color/np__grey_dark</item>
+	    <item name="android:shadowDx">1</item>
+	    <item name="android:shadowDy">1</item>
+	    <item name="android:shadowRadius">1</item>
+    </style>
+    
+    <!--
+    	========================================================
+    	Current Matches.
+    	======================================================== 
+    -->
+        
+    <style name="NP__.CurrentMatches.Rank.Text" parent="NP__.Widget.Text.Content.Large">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/np__white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:background">@null</item>
+	    <item name="android:shadowColor">@color/np__grey_dark</item>
+	    <item name="android:shadowDx">1</item>
+	    <item name="android:shadowDy">1</item>
+	    <item name="android:shadowRadius">1</item>
+    </style>
+    
+    <style name="NP__.CurrentMatches.AdditionalPlayers.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/np__current_matches_additonal_players</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="NP__.CurrentMatches.MatchMarker.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/np__current_matches_marker</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="NP__.CurrentMatches.MatchStatus.Text" parent="NP__.Widget.Text.Content.Medium">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/np__current_matches_status</item>
         <item name="android:textStyle">bold</item>
     </style>
     

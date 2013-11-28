@@ -36,8 +36,31 @@ public class SuperJumperAndroid extends AndroidApplication {
 		initialize(superJumper, false);
 	}
 
-	// Nextpeer integration: In case that the on back pressed and we still in game, we wish to forfeit the current game
+	// Nextpeer integration: Let Nextpeer know that the user session has started
+	@Override
+	protected void onStart() {
+	    super.onStart();
 
+	    // Notify the beginning of a user session.
+    	if (mTournaments != null) {
+    		mTournaments.onStart();
+    	}
+	}
+	// Nextpeer integration
+
+	// Nextpeer integration: Let Nextpeer know that the user session has ended while in tournament
+	@Override 
+	public void onStop() {
+	    super.onStop(); 
+
+	    // If there is an on-going tournament make sure to forfeit it 
+    	if (mTournaments != null && mTournaments.isCurrentlyInTournament()) {
+    		mTournaments.reportForfeitForCurrentTournament();
+    	}
+	}
+	// Nextpeer integration
+	
+	// Nextpeer integration: In case that the on back pressed and we still in game, we wish to forfeit the current game
     /** The user pressed on the back button */
     @Override
     public void onBackPressed() {

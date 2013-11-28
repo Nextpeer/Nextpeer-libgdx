@@ -8,7 +8,7 @@
     <FrameLayout
         android:id="@+id/np__tournament_loading_random_player_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/np__tournament_bar_height"
+        android:layout_height="@dimen/np__tournament_loading_bar_height"
         android:background="@color/np__tournament_loading_player_bar_background"
         android:padding="@dimen/np__tournament_loading_player_bar_padding" >
 
@@ -24,11 +24,11 @@
 
             <com.nextpeer.android.NextpeerUIImageView
                 android:id="@+id/np__tournament_loading_random_player_bar_thumbnail"
-                android:layout_width="@dimen/np__replacement_thumbnail_size"
-                android:layout_height="@dimen/np__replacement_thumbnail_size"
+                android:layout_width="@dimen/np__tournament_loading_player_thumbnail_size"
+                android:layout_height="@dimen/np__tournament_loading_player_thumbnail_size"
                 android:layout_alignParentLeft="true"
-                android:layout_marginRight="@dimen/np__replacement_thumbnail_margin"
-                android:layout_marginLeft="@dimen/np__replacement_thumbnail_margin_left"
+                android:layout_marginRight="@dimen/np__tournament_loading_bar_margin"
+                android:layout_marginLeft="@dimen/np__tournament_loading_bar_margin"
                 style="@style/NP__.Widget.Replacement" />
             
             <TextView
@@ -36,15 +36,15 @@
                 android:layout_width="@dimen/np__tournament_loading_label_width"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/np__tournament_loading_random_player_bar_thumbnail"
-                android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/np__tournament_loading_random_player_bar_thumbnail"
+                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/np__tournament_loading_label"
                 android:gravity="center_vertical"
+                android:text="@string/np__tournament_loading_this_is_you_label"
+                android:background="@drawable/np__tournament_loading_label"
                 android:paddingLeft="10dp"
-                android:text="@string/np__tournament_loading_label"
                 android:textColor="@color/np__white"
-                android:textSize="11dp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -57,15 +57,13 @@
                 android:layout_toLeftOf="@+id/tournament_loading_random_player_bar_label"
                 android:layout_marginLeft="@dimen/np__widget_text_content_horizontal_margin"
                 android:layout_marginRight="@dimen/np__widget_text_content_horizontal_margin"
-                style="@style/NP__.Widget.Text.Content.Medium"
-                android:singleLine="true"
-                android:ellipsize="end"
+                style="@style/NP__.TournamentLoading.PlayerName.Text"
+                android:text="@string/np__application_name"
                 android:gravity="center_vertical|left" />
             
         </RelativeLayout>
 
     </FrameLayout>
-
     <RelativeLayout
         android:id="@+id/np__tournament_loading_random_loading_bar"
         android:layout_width="match_parent"
@@ -83,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            style="@style/NP__.Widget.Text.Content.Title.Small"
+            style="@style/NP__.TournamentLoading.Loading.Text"
             android:text="@string/np__tournament_loading_loading_bar_title_connecting" />
         
         <ProgressBar
@@ -108,7 +106,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/np__content_line_separator_width"
-        android:background="@color/np__content_line_separator_background_color" />
+        android:background="@color/np__content_line_separator_background" />
     
     <ListView
         android:id="@+id/np__tournament_loading_random_list_peers"

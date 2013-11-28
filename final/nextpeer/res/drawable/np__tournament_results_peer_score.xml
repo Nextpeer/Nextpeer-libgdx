@@ -6,7 +6,7 @@
 
     <stroke
         android:width="1px"
-        android:color="@color/np__tournament_results_peer_text_score_frame_color" />
+        android:color="@color/np__tournament_results_peer_text_score_frame" />
 
     <solid android:color="@color/np__white" />
 

@@ -21,7 +21,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/np__loading_indicator_progressbar"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/np__orange_dark"
+        android:textColor="@color/np__nextpeer_orange_selected"
         android:text="@string/np__loading_indicator_title" />
 
 </RelativeLayout>

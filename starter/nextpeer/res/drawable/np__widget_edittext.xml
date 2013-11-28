@@ -6,7 +6,7 @@
 
     <stroke
         android:width="@dimen/np__widget_edittext_stroke_size"
-        android:color="@color/np__orange" />
+        android:color="@color/np__nextpeer_orange" />
 
     <solid android:color="@color/np__white" />
 

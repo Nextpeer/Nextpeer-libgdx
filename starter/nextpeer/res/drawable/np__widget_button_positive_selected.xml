@@ -4,6 +4,6 @@
 
     <corners android:radius="@dimen/np__content_rectangle_radius_size" />
 
-    <solid android:color="@color/np__orange_dark" />
+    <solid android:color="@color/np__nextpeer_orange_selected" />
 
 </shape>

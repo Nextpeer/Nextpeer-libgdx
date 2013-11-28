@@ -5,31 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/np__tournament_bar_height"
-        android:background="@color/np__tournament_results_replay_bar_background"
-        android:padding="@dimen/np__content_padding"
+   <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/np__tournament_results_default_bar_height"
+        android:background="@color/np__tournament_results_bar_background"
         android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/np__tournament_results_random_replay_bar_button_replay"
+	 	android:orientation="horizontal">
+		<Button
+            android:id="@+id/np__tournament_results_random_bar_button_replay"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/np__tournament_results_replay_bar_button_replay_selector"
-			android:paddingTop="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
-			android:paddingBottom="@dimen/np__tournament_results_replay_bar_button_replay_verticale_padding"
-			android:paddingLeft="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
-			android:paddingRight="@dimen/np__tournament_results_replay_bar_button_replay_horizontal_padding"
-  			android:drawableLeft="@drawable/np__ic_replay_white"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="center"
-            android:textColor="@color/np__white"
-            android:text="@string/np__tournament_results_replay_bar_button_replay" />
-        
-    </LinearLayout>
-
+            android:layout_height="@dimen/np__tournament_results_default_button_height"
+       		android:layout_centerInParent="true"
+       		style="@style/NP__.TournamentResults.Replay.Button"/>
+	</RelativeLayout>
+    
     <ListView
         android:id="@+id/np__tournament_results_random_list_peers"
         style="@style/NP__.Widget.ListView.Context"

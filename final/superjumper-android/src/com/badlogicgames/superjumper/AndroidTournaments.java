@@ -101,4 +101,12 @@ public final class AndroidTournaments extends Tournaments {
     public boolean isCurrentlyInTournament() {
     	return Nextpeer.isCurrentlyInTournament();
     }
+
+    /**
+     * Call this method to report that the view is visible to the user.
+     * @note This method is specific for Android. Call this method from {@code Activity#onStart()}.
+     */
+    public void onStart() {
+    	Nextpeer.onStart();
+    }
 }

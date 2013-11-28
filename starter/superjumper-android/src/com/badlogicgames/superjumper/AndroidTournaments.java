@@ -75,7 +75,7 @@ public final class AndroidTournaments extends Tournaments {
     public void reportScoreForCurrentTournament(int score) {
     	Nextpeer.reportScoreForCurrentTournament(score);
     }
-
+    
     /**
      * Call this method when your game manage the current tournament and the player just died (a.k.a. 'Last Man Standing').
      * Nextpeer will call NextpeerListener's onTournamentEnd method after reporting the last score.

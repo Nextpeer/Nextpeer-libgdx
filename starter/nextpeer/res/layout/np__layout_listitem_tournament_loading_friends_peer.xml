@@ -3,25 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@null"
-    android:padding="@dimen/np__content_padding" >
+    android:padding="@dimen/np__tournament_cell_padding" >
     
 	<FrameLayout
         android:id="@+id/np__tournament_loading_friends_peer_thumbnail_container"
-        android:layout_width="@dimen/np__replacement_thumbnail_size"
-        android:layout_height="@dimen/np__replacement_thumbnail_size"
-        android:layout_marginRight="@dimen/np__replacement_thumbnail_margin" 
+        android:layout_width="@dimen/np__tournament_loading_player_thumbnail_size"
+        android:layout_height="@dimen/np__tournament_loading_player_thumbnail_size"
+        android:layout_marginRight="@dimen/np__tournament_cell_padding" 
         android:layout_alignParentLeft="true">
     <com.nextpeer.android.NextpeerUIImageView
         android:id="@+id/np__tournament_loading_friends_peer_thumbnail"
         style="@style/NP__.Widget.Replacement"
-        android:layout_width="@dimen/np__replacement_thumbnail_size"
-        android:layout_height="@dimen/np__replacement_thumbnail_size"/>     
+        android:layout_width="@dimen/np__tournament_loading_player_thumbnail_size"
+        android:layout_height="@dimen/np__tournament_loading_player_thumbnail_size"/>     
 	    <ImageView 
-			android:id="@+id/np__tournament_loading_friends_presence" 
+			android:id="@+id/np__tournament_loading_friends_online_presence" 
 			android:contentDescription="@string/np__application_name"
 		    android:layout_width="@dimen/np__tournament_loading_friends_item_presence_size"
 		    android:layout_height="@dimen/np__tournament_loading_friends_item_presence_size"
 			android:src="@drawable/np__tournament_loading_friends_online_presence" 
+			android:layout_gravity="bottom|right"
+			android:visibility="gone"/>   
+	    <ImageView 
+			android:id="@+id/np__tournament_loading_friends_away_presence" 
+			android:contentDescription="@string/np__application_name"
+		    android:layout_width="@dimen/np__tournament_loading_friends_item_presence_size"
+		    android:layout_height="@dimen/np__tournament_loading_friends_item_presence_size"
+			android:src="@drawable/np__tournament_loading_friends_away_presence" 
 			android:layout_gravity="bottom|right"/>   
 	</FrameLayout>
 
