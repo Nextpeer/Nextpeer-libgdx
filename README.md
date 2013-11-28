@@ -84,9 +84,10 @@ We’ll start by adding the tournaments to the game logic. Navigate to the `supe
 	}
 	
 	public SuperJumper(Tournaments tournaments) {
-		// Make sure Nextpeer is supported:
+		// If we have a supported tournaments object, set the game as callback
 		if (tournaments != null && tournaments.isSupported()) {
 			this.tournaments = tournaments;
+			this.tournaments.setTournamentsCallback(this);
 		}
 	}
 
