@@ -4,6 +4,7 @@
 The [Nextpeer][np] platform lets you easily add multiplayer tournaments to your single player game, so users can play with each other become more engaged with the game. The platform supports both time-based and game-controlled (in which the game decides when to end the tournament) tournaments. Nextpeer has many advanced features which allow you to turn your game into a multiplayer phenomenon. This guide will cover the basic integration between a [libGDX][libgdx] game and Nextpeer. 
 
 This integration guide will cover an Android integration, however you can also integrate Nextpeer to your [iOS port][libGDX_iOS_plugin].
+
 Don't forget to check our sample code, available [here][sample_code].
 
 ## Prerequisites
